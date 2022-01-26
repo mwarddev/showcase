@@ -40,11 +40,11 @@ Placeholder for responsive image
 #### Site Owner Goals:
 * As the site owner I would like to:
   * See notifications of any reported posts from the home screen.
-  * Have easy access to the admin section of the site.
+  * Have easy access to the admin page.
   * Be able to send users direct messages to warn of inappropriate content breaches.
   * Be able to delete posts or comments.
   * Be able to block a user for a period of time.
-  * Be able to delete a user profile profile and all posts and comments created by the user.
+  * Be able to delete a user profile and all posts and comments created by the user.
 
 ## Design (UXD)
 
@@ -65,4 +65,21 @@ Create a platform for artists to display their talent and receive feedback in th
   * Most artists tend to use social media to display their work, this platform is specifically designed for artists and clients that appreciate the content of the site.
 * __Tech considerations?__
   * The site will be built with Python + Django, using class based views, HTML templates, Bootstrap to handle responsiveness and styling, CSS to handle custom styling, JavaScript to handle timeout functions and CDNs, and PostgreSQL for the database. 
+* __Why would a user want this?__
+  * Users would want to use this site to get useful and relevant feedback about their work from like minded people.
 
+### Scope
+
+* __What does the user want to accomplish?__
+  * The user wants to display their work on a platform specifically designed for artists and receive relevant and constructive feedback from like minded people.
+* __What does the user need to do in order to achieve their objective?__
+  * The user needs to register and login to the site to give them access to a profile page from which they can create posts and comment on other user's posts.
+* __What constraints does the site or app has to conform within?__
+  * A limited build time.
+* __What dynamic constraints do we have to meet?__
+  * Ensure innapropriate content is dealt with swiftly by use of the 'Report' procedure.
+
+#### Functional Scope
+
+#### Agile Methodology
+ 
