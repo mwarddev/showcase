@@ -81,5 +81,9 @@ Create a platform for artists to display their talent and receive feedback in th
 
 #### Functional Scope
 
+Logic flowchart
+
+![Logic flowchart](readme-images/showcase-logic-flow.jpg)
+
 #### Agile Methodology
  
