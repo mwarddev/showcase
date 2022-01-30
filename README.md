@@ -81,9 +81,15 @@ Create a platform for artists to display their talent and receive feedback in th
 
 #### Functional Scope
 
-Logic flowchart
+The following diagrams were created on [diagrams.net](https://app.diagrams.net).
 
-![Logic flowchart](readme-images/showcase-logic-flow.jpg)
+Logic Flowchart
+
+![Logic Flowchart](readme-images/showcase-logic-flow.jpg)
+
+Entity Relationship Diagram
+
+![ERD](readme-images/showcase-erd.jpg)
 
 #### Agile Methodology
  
