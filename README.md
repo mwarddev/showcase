@@ -79,7 +79,7 @@ Create a platform for artists to display their talent and receive feedback in th
 * __What dynamic constraints do we have to meet?__
   * Ensure innapropriate content is dealt with swiftly by use of the 'Report' procedure.
 
-#### Functional Scope
+#### **Functional Scope**
 
 The following diagrams were created on [diagrams.net](https://app.diagrams.net).
 
@@ -91,5 +91,18 @@ Entity Relationship Diagram
 
 ![ERD](readme-images/showcase-erd.jpg)
 
-#### Agile Methodology
+#### **Agile Methodology**
  
+All development of this project was managed using the Project and issues features of [GitHub](https://github.com), which can be viewed [here](https://github.com/mwarddev/showcase/projects/1).
+
+## Structure
+
+* Using a simple straight forward layout, users will easily be able to navigate to their desired content.
+* A fixed navigation bar at the top of the page will enable easy navigation and the ability to register/login or logout.
+* From the home page, users can navigate content by genre, view a top 10 list of the site's most popular posts, search for content and navigate to their profile page.
+* From their profile page, users can view a timeline list of their posts, update/delete their posts and create new posts.
+* When viewing another user's post, users can like/dislike the post, comment on the post, reply to another user's comment and like/dislike another user's comment. Comments and posts can also be reported if the content is deemed inappropriate.
+* Clicking on another user's name anywhere on the site will navigate to that user's profile page to view all content by that user.
+
+## Skeleton
+
