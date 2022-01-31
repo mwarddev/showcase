@@ -13,7 +13,7 @@ Placeholder for responsive image
   * Be able to view content on the site without having to login.
   * Be able to search for content I'm interested in by:
     * Subject matter
-    * Genre
+    * Art form
     * Username
   * Be able to easily register to login to the site with a username, email and password to create a user profile.
 
@@ -23,7 +23,7 @@ Placeholder for responsive image
   * Be able to see a list of the top posts on the home page rated by number of likes.
   * Be able to easily add a post with the following content:
     * A title
-    * Genre
+    * Art form
     * Image/s or video/s
     * A description of the content
   * Be able to edit a post or comment.
@@ -83,15 +83,9 @@ Create a platform for artists to display their talent and receive feedback in th
 
 The following diagrams were created on [diagrams.net](https://app.diagrams.net).
 
-The following diagrams were created on [diagrams.net](https://app.diagrams.net).
-
 Logic Flowchart
 
 ![Logic Flowchart](readme-images/showcase-logic-flow.jpg)
-
-Entity Relationship Diagram
-
-![ERD](readme-images/showcase-erd.jpg)
 
 Entity Relationship Diagram
 
@@ -105,7 +99,7 @@ All development of this project was managed using the Project and issues feature
 
 * Using a simple straight forward layout, users will easily be able to navigate to their desired content.
 * A fixed navigation bar at the top of the page will enable easy navigation and the ability to register/login or logout.
-* From the home page, users can navigate content by genre, view a top 10 list of the site's most popular posts, search for content and navigate to their profile page.
+* From the home page, users can navigate content by art form, view a top 10 list of the site's most popular posts, search for content and navigate to their profile page.
 * From their profile page, users can view a timeline list of their posts, update/delete their posts and create new posts.
 * When viewing another user's post, users can like/dislike the post, comment on the post, reply to another user's comment and like/dislike another user's comment. Comments and posts can also be reported if the content is deemed inappropriate.
 * Clicking on another user's name anywhere on the site will navigate to that user's profile page to view all content by that user.
