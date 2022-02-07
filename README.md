@@ -106,3 +106,6 @@ All development of this project was managed using the Project and issues feature
 
 ## Skeleton
 
+It is likely that most users would use this site on a mobile device due to camera fucionality, and with this in mind the site has been designed with a mobile first perspective.
+
+View the wireframes [here](readme-images/showcase_wireframes.pdf).
