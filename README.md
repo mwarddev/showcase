@@ -19,17 +19,17 @@ Placeholder for responsive image
 
 * As a logged user I would like to:
   * Be able to easily login to the site.
-  * Be able to see notifications of any unseen likes or comments made about my posts or comments.
+  * Be able to see notifications of any unseen likes or comments made about my posts.
   * Be able to see a list of the top posts on the home page rated by number of likes.
   * Be able to easily add a post with the following content:
     * A title
     * Art form
     * Image/s or video/s
     * A description of the content
-  * Be able to edit a post or comment.
+  * Be able to edit my posts.
   * Be able to view my profile page containing any posts I have created and resulting comments and likes/dislikes.
   * Be able to view and add comments on posts.
-  * Be able to comment on comments.
+  * Be able to edit my comment after submission.
   * Be able to like or dislike a post.
   * Be able to like or dislike a comment.  
   * Be able to report a post or comment for inappropriate content.  
@@ -113,4 +113,23 @@ View the wireframes [here](readme-images/showcase_wireframes.pdf).
 
 ## Surface
 
+The colour scheme for the site needs to be visually appealing without taking ephasis away from the posted art. Using a small colour palette should help with this.
+
+### Colour Palette
+
+![Colour-palette](readme-images/showcase-palette.png)
+
+This colour palette was obtained from [coolors.co](https://coolors.co/).
+
+### Typography
+
+All fonts have been imported from [Google Fonts](https://fonts.google.com/).
+
+For tiles and subtitles the Oswald and Dancing Script fonts have been used and the Roboto Serif font for all other text.
+
+### Iconography
+
+The favicon ![favicon](readme-images/showcase-favicon.png) was created with a simple paint application.
+
+All other icons were obtained from [Fontawesome](https://fontawesome.com/).
 
