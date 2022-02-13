@@ -5,6 +5,27 @@ Users can upload images or videos along with a description or excerpt of their a
 
 Placeholder for responsive image
 
+## Contents
+
+* [User Experience (UX)](#user-experience-ux)
+  * [User Stories](#user-stories)
+    * [External User Goals](#external-user-goals)
+    * [Site Owner Goals](#site-owner-goals)
+* [Design (UXD)](#design-uxd)
+  * [Strategy](#strategy)
+    * [Project Goal](#project-goal)
+  * [Scope](#scope)
+    * [Functional Scope](#functional-scope)
+    * [Agile Methodology](#agile-methodology)
+  * [Structure](#structure)
+  * [Skeleton](#skeleton)
+  * [Surface](#surface)
+    * [Colour Palette](#colour-palette)
+    * [Typography](#typography)
+    * [Iconography](#iconography)
+  
+
+
 ## User Experience (UX)
 ### User Stories
 
@@ -95,7 +116,7 @@ Entity Relationship Diagram
  
 All development of this project was managed using the Project and issues features of [GitHub](https://github.com), which can be viewed [here](https://github.com/mwarddev/showcase/projects/1).
 
-## Structure
+### Structure
 
 * Using a simple straight forward layout, users will easily be able to navigate to their desired content.
 * A fixed navigation bar at the top of the page will enable easy navigation and the ability to register/login or logout.
@@ -104,30 +125,30 @@ All development of this project was managed using the Project and issues feature
 * When viewing another user's post, users can like/dislike the post, comment on the post, reply to another user's comment and like/dislike another user's comment. Comments and posts can also be reported if the content is deemed inappropriate.
 * Clicking on another user's name anywhere on the site will navigate to that user's profile page to view all content by that user.
 
-## Skeleton
+### Skeleton
 
 It is likely that most users would use this site on a mobile device due to camera fucionality, and with this in mind the site has been designed with a mobile first perspective.
 
 Wireframe layouts for the site were created using [balsamiq](https://balsamiq.com/).
 View the wireframes [here](readme-images/showcase_wireframes.pdf).
 
-## Surface
+### Surface
 
 The colour scheme for the site needs to be visually appealing without taking ephasis away from the posted art. Using a small colour palette should help with this.
 
-### Colour Palette
+#### Colour Palette
 
 ![Colour-palette](readme-images/showcase-palette.png)
 
 This colour palette was obtained from [coolors.co](https://coolors.co/).
 
-### Typography
+#### Typography
 
 All fonts have been imported from [Google Fonts](https://fonts.google.com/).
 
 For tiles and subtitles the Oswald and Dancing Script fonts have been used and the Roboto Serif font for all other text.
 
-### Iconography
+#### Iconography
 
 The favicon ![favicon](readme-images/showcase-icon.png) was created with a simple paint application.
 
