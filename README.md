@@ -146,7 +146,7 @@ This colour palette was obtained from [coolors.co](https://coolors.co/).
 
 All fonts have been imported from [Google Fonts](https://fonts.google.com/).
 
-For tiles and subtitles the Oswald and Dancing Script fonts have been used and the Roboto Serif font for all other text.
+For titles and subtitles the Oswald and Dancing Script fonts have been used and the Roboto Serif font for all other text.
 
 #### Iconography
 
