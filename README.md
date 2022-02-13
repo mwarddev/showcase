@@ -129,7 +129,7 @@ For tiles and subtitles the Oswald and Dancing Script fonts have been used and t
 
 ### Iconography
 
-The favicon ![favicon](readme-images/showcase-favicon.png) was created with a simple paint application.
+The favicon ![favicon](readme-images/showcase-icon.png) was created with a simple paint application.
 
 All other icons were obtained from [Fontawesome](https://fontawesome.com/).
 
