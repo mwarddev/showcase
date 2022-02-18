@@ -17,7 +17,7 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now=True)
     updated_date = models.DateTimeField(auto_now=True)
     description = models.TextField()
-    media = CloudinaryField(resource_type='', default='placeholder')
+    media = CloudinaryField('image', resource_type='video', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
     like = models.ManyToManyField(User, related_name='likes', blank=True)
     dislike = models.ManyToManyField(User, related_name='dislikes', blank=True)
