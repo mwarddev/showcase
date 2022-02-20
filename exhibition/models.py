@@ -3,6 +3,14 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
+CATEGORY = ((0, 'Painting'),
+            (1, 'Photography'),
+            (2, 'Music'),
+            (3, 'Graphic Design'),
+            (4, 'Fashion'),
+            (5, 'Sculpture'),
+            (6, 'Architecture'),
+            (7, 'Fine Art'))
 
 
 class Post(models.Model):
@@ -14,15 +22,17 @@ class Post(models.Model):
                                   related_name='posts')
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    created_date = models.DateTimeField(auto_now=True)
+    art_form = models.IntegerField(choices=CATEGORY, default=0)
+    created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     description = models.TextField()
     media = CloudinaryField('image', resource_type='video',
                             default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
-    like = models.ManyToManyField(User, related_name='likes', blank=True)
-    dislike = models.ManyToManyField(User, related_name='dislikes', blank=True)
-    report = models.ManyToManyField(User, related_name='report', blank=True)
+    report_post = models.ForeignKey(User,
+                                    on_delete=models.CASCADE,
+                                    related_name='report', default=False)
+
 
     class Meta:
         """
@@ -32,9 +42,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-    def likes_count(self):
-        return self.like.count()
-
-    def dislikes_count(self):
-        return self.dislike.count()

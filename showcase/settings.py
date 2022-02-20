@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'exhibition',
+    'comments',
+    'popular',
 ]
 
 MIDDLEWARE = [

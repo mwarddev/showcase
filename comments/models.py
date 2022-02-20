@@ -1,9 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-from exhibition import Post
+from exhibition.models import Post
 
 
-class Comments(models.Model):
+class Comment(models.Model):
     """
     Database model for user comments
     """
@@ -14,15 +14,9 @@ class Comments(models.Model):
                                   related_name='user_comment')
     body = models.TextField(blank=False)
     created_date = models.DateTimeField(auto_now=True)
-    comment_like = models.ManyToManyField(User,
-                                          related_name='comment_likes',
-                                          blank=True)
-    comment_dislike = models.ManyToManyField(User,
-                                             related_name='comment_dislikes',
-                                             blank=True)
-    comment_report = models.ManyToManyField(User,
-                                            related_name='comment_report',
-                                            blank=True)
+    report_comment = models.ForeignKey(User,
+                                       on_delete=models.CASCADE,
+                                       related_name='report_comment', default=False)
 
     class Meta:
         """
@@ -32,9 +26,3 @@ class Comments(models.Model):
 
     def __str__(self):
         return f"Comment {self.user_name} {self.body}"
-
-    def likes_count(self):
-        return self.comment_like.count()
-
-    def dislikes_count(self):
-        return self.comment_dislike.count()
