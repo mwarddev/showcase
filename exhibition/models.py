@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-STATUS = ((0, 'Draft'), (1, 'Published'))
 CATEGORY = ((0, 'Painting'),
             (1, 'Photography'),
             (2, 'Music'),
@@ -27,7 +26,6 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now=True)
     description = models.TextField()
     media = CloudinaryField('Media', default='placeholder')
-    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         """
