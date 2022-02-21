@@ -14,9 +14,6 @@ class Comment(models.Model):
                                   related_name='user_comment')
     body = models.TextField(blank=False)
     created_date = models.DateTimeField(auto_now=True)
-    report_comment = models.ForeignKey(User,
-                                       on_delete=models.CASCADE,
-                                       related_name='report_comment', default=False)
 
     class Meta:
         """

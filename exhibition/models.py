@@ -26,13 +26,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     description = models.TextField()
-    media = CloudinaryField('image', resource_type='video',
-                            default='placeholder')
+    media = CloudinaryField('Media', default='placeholder')
     status = models.IntegerField(choices=STATUS, default=0)
-    report_post = models.ForeignKey(User,
-                                    on_delete=models.CASCADE,
-                                    related_name='report', default=False)
-
 
     class Meta:
         """
@@ -41,4 +36,4 @@ class Post(models.Model):
         ordering = ['-created_date']
 
     def __str__(self):
-        return self.title
+        return f"{self.title}"
