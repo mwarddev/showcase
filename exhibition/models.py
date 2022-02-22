@@ -2,14 +2,16 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-CATEGORY = ((0, 'Painting'),
-            (1, 'Photography'),
-            (2, 'Music'),
-            (3, 'Graphic Design'),
-            (4, 'Fashion'),
-            (5, 'Sculpture'),
-            (6, 'Architecture'),
-            (7, 'Fine Art'))
+CATEGORY = (
+    (0, 'Painting'),
+    (1, 'Photography'),
+    (2, 'Music'),
+    (3, 'Graphic Design'),
+    (4, 'Fashion'),
+    (5, 'Sculpture'),
+    (6, 'Architecture'),
+    (7, 'Fine Art')
+)
 
 
 class Post(models.Model):

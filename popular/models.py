@@ -15,8 +15,6 @@ class PostLike(models.Model):
     post = models.ForeignKey(Post,
                              on_delete=models.CASCADE,
                              related_name='post_likes')
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
 
 
 class PostDislike(models.Model):
@@ -30,8 +28,6 @@ class PostDislike(models.Model):
     post = models.ForeignKey(Post,
                              on_delete=models.CASCADE,
                              related_name='post_dislikes')
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
 
 
 class CommentLike(models.Model):
@@ -45,8 +41,6 @@ class CommentLike(models.Model):
     comment = models.ForeignKey(Comment,
                                 on_delete=models.CASCADE,
                                 related_name='comment_likes')
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
 
 
 class CommentDislike(models.Model):
@@ -60,5 +54,3 @@ class CommentDislike(models.Model):
     comment = models.ForeignKey(Comment,
                                 on_delete=models.CASCADE,
                                 related_name='comment_dislikes')
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
