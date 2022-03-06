@@ -13,6 +13,7 @@ REPORTED_REASON = (
     (6, 'Harassment'),
 )
 
+
 class PostReport(models.Model):
     """
     Database model for reporting a post

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Posts</h1>
+    <h2>{{ url }}</h2>
+    <ul>
+    {% for post in post_list %}
+        <li>
+            <a href="{% url 'full_post' post.slug %}">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.artform }}</p>
+                <p>{{ post.description|truncatechars:50 }}</p>
+                <p>Posted by: {{ post.user_name }}</p>
+                <p>Created on: {{ post.created_date }}</p>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock content %}

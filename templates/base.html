@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Oswald&family=Roboto+Serif&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/46a3eeb20c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/showcase-icon.png' %}" />
+    <title>Showcase</title>
+</head>
+
+<body class="d-flex flex-column h-100 main-bg">
+
+    <!-- Navigation -->
+
+    <nav class="navbar navbar-expand-lg navbar-light px-2 shadow nav-bg">
+        <div class="container-fluid px-0">
+            <a href="{% url 'home' %}" class="navbar-brand"><span class="brand">SHOWCASE</span><span class="fancy"> your
+                    creativity</span></a>
+            <form class="form-inline">
+                <input class="form-control search-box mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-sm search-btn my-2 my-sm-0 mr-3" type="submit">Search</button>
+            </form>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa-solid fa-house"></i><p>Home</p></a>
+                </li>
+                {% if user.is_superuser %}
+                <li class="nav-item">
+                    <a class="nav-link px-0.5" href="{% url 'admin:index' %}"><i class="fa-solid fa-screwdriver-wrench"></i><p>Admin</p></a>
+                </li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i><p>{{ user.get_username }}</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i><p>Logout</p></a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-cabinet-filing"></i><p>Register</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i><p>Login</p></a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock content %}
+</body>
+
+</html>

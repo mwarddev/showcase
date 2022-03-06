@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for key, value in category %}
+    <a href="posts/{{ value }}">
+        <h3>{{ value }}</h3>
+    </a>
+{% endfor %}
+
+{% endblock content %}
