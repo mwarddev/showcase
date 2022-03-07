@@ -26,36 +26,42 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light px-2 shadow nav-bg">
-        <div class="container-fluid px-0">
-            <a href="{% url 'home' %}" class="navbar-brand"><span class="brand">SHOWCASE</span><span class="fancy"> your
-                    creativity</span></a>
-            <form class="form-inline">
-                <input class="form-control search-box mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-sm search-btn my-2 my-sm-0 mr-3" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav">
+    <nav class="navbar navbar-expand px-2 shadow nav-bg">
+        <div class="container-fluid px-0">            
+            
+            <ul class="navbar-nav light">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa-solid fa-house"></i><p>Home</p></a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa-solid fa-house"></i><p class="icon-name d-none d-sm-block">Home</p></a>
                 </li>
-                {% if user.is_superuser %}
-                <li class="nav-item">
-                    <a class="nav-link px-0.5" href="{% url 'admin:index' %}"><i class="fa-solid fa-screwdriver-wrench"></i><p>Admin</p></a>
-                </li>
-                {% endif %}
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i><p>{{ user.get_username }}</p></a>
+                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i><p class="icon-name d-none d-sm-block">{{ user.get_username }}</p></a>
                 </li>
+                {% endif %}
+                {% if user.is_superuser %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i><p>Logout</p></a>
+                    <a class="nav-link px-0.5" href="{% url 'admin:index' %}"><i class="fa-solid fa-screwdriver-wrench"></i><p class="icon-name d-none d-sm-block">Admin</p></a>
+                </li>
+                {% endif %}
+            </ul>
+
+            <a href="{% url 'home' %}" class="navbar-brand m-0"><span class="brand">SHOW<span class="brand">CASE</span></span><span class="fancy d-none d-md-inline"> your
+                    creativity</span></a>
+
+            <ul class="navbar-nav dark">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i><p class="icon-name d-none d-sm-block">Search</p></a>
+                </li>
+                {% if user.is_authenticated %}                
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i><p class="icon-name d-none d-sm-block">Logout</p></a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-cabinet-filing"></i><p>Register</p></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-cabinet-filing"></i><p class="icon-name d-none d-sm-block">Register</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i><p>Login</p></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i><p class="icon-name d-none d-sm-block">Login</p></a>
                 </li>
                 {% endif %}
             </ul>

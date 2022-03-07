@@ -11,44 +11,37 @@ body {
 
 .brand {
     font-size: 1.5rem;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
     color: #f4effa;
 }
 
 .fancy {
     font-family: 'Dancing Script', cursive;
-    color: #f4effa;
-    font-size: 1.5rem;
-}
-
-.search-box {
-    height: 31px;
-    border: 1px solid #532b88;
-}
-
-.search-btn {
-    border: 1px solid #532b88;
     color: #532b88;
-}
-
-.search-btn:hover {
-    background-color: #532b88;
-    color: #f4effa;
+    font-size: 1.5rem;
 }
 
 .nav-link {
     text-align: center;
 }
 
-.nav-link p {
-    font-size: 0.8rem;
+ul .nav-link:hover {
+    color: #9b72cf;
+}
+
+.light .nav-link {
+    color: #f4effa;
+}
+
+.dark .nav-link {
+    color: #532b88;
+}
+
+.icon-name {
+    font-size: 0.7rem;
     margin-bottom: 0;
 }
 
 .nav-link i {
-    font-size: 2rem;
-}
-
-.nav-link.active {
-    color: #532b88 !important;
+    font-size: 1rem;
 }
