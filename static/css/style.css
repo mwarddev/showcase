@@ -4,14 +4,14 @@ body {
 }
 
 .nav-bg {
-    background: linear-gradient(to right, #532b88 0% 50%, #f4effa 50% 100%);
+    background: linear-gradient(to right, #532b88 0% 50.5%, #f4effa 50.5% 100%);
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
 }
 
 .brand {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
+    font-size: 1.6rem;
+    letter-spacing: 4px;
     color: #f4effa;
 }
 
@@ -23,10 +23,16 @@ body {
 
 .nav-link {
     text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 ul .nav-link:hover {
     color: #9b72cf;
+}
+
+.light,.dark,.navbar-brand {
+    flex: 1;
 }
 
 .light .nav-link {
@@ -44,4 +50,10 @@ ul .nav-link:hover {
 
 .nav-link i {
     font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .brand-dark {
+        color: #532b88;
+    }
 }

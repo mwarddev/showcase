@@ -22,46 +22,63 @@
     <title>Showcase</title>
 </head>
 
-<body class="d-flex flex-column h-100 main-bg">
+<body class="d-flex flex-column h-100">
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand px-2 shadow nav-bg">
-        <div class="container-fluid px-0">            
-            
-            <ul class="navbar-nav light">
+    <nav class="navbar navbar-expand px-0 shadow nav-bg">
+        <div class="container-fluid d-flex justify-content-between px-0">
+
+            <ul class="navbar-nav py-0 light">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa-solid fa-house"></i><p class="icon-name d-none d-sm-block">Home</p></a>
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i
+                            class="fa-solid fa-house"></i>
+                        <p class="icon-name d-none d-sm-block">Home</p>
+                    </a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i><p class="icon-name d-none d-sm-block">{{ user.get_username }}</p></a>
+                    <a href="#" class="nav-link"><i class="fa-solid fa-user"></i>
+                        <p class="icon-name d-none d-sm-block">{{ user.get_username }}</p>
+                    </a>
                 </li>
                 {% endif %}
                 {% if user.is_superuser %}
                 <li class="nav-item">
-                    <a class="nav-link px-0.5" href="{% url 'admin:index' %}"><i class="fa-solid fa-screwdriver-wrench"></i><p class="icon-name d-none d-sm-block">Admin</p></a>
+                    <a class="nav-link" href="{% url 'admin:index' %}"><i class="fa-solid fa-screwdriver-wrench"></i>
+                        <p class="icon-name d-none d-sm-block">Admin</p>
+                    </a>
                 </li>
                 {% endif %}
             </ul>
-
-            <a href="{% url 'home' %}" class="navbar-brand m-0"><span class="brand">SHOW<span class="brand">CASE</span></span><span class="fancy d-none d-md-inline"> your
-                    creativity</span></a>
-
-            <ul class="navbar-nav dark">
+            <div>
+                <a href="{% url 'home' %}" class="navbar-brand py-0 m-0"><span class="brand">SHOW<span
+                            class="brand brand-dark">CASE </span></span><span class="invisible d-none d-md-inline">hide</span><span
+                        class="fancy d-none d-md-inline">your
+                        creativity</span></a>
+            </div class="justify-content-center">
+            <ul class="navbar-nav py-0 dark justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i><p class="icon-name d-none d-sm-block">Search</p></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i>
+                        <p class="icon-name d-none d-sm-block">Search</p>
+                    </a>
                 </li>
-                {% if user.is_authenticated %}                
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i><p class="icon-name d-none d-sm-block">Logout</p></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>
+                        <p class="icon-name d-none d-sm-block">Logout</p>
+                    </a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-cabinet-filing"></i><p class="icon-name d-none d-sm-block">Register</p></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-cabinet-filing"></i>
+                        <p class="icon-name d-none d-sm-block">Register</p>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i><p class="icon-name d-none d-sm-block">Login</p></a>
+                    <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                        <p class="icon-name d-none d-sm-block">Login</p>
+                    </a>
                 </li>
                 {% endif %}
             </ul>
