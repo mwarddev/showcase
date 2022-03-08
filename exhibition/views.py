@@ -36,3 +36,4 @@ class FullPostView(generic.DetailView):
 
     model = Post
     template_name = 'full_post.html'
+

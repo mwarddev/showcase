@@ -27,7 +27,7 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand px-0 shadow nav-bg">
+    <nav class="navbar navbar-expand px-0 shadow nav-bg fixed-top">
         <div class="container-fluid d-flex justify-content-between px-0">
 
             <ul class="navbar-nav py-0 light">
@@ -53,9 +53,8 @@
                 {% endif %}
             </ul>
             <div class="justify-content-center">
-                <a href="{% url 'home' %}" class="navbar-brand py-0 m-0"><span class="brand off-white">SHOW<span
-                            class="brand brand-dark">CASE </span></span><span
-                        class="invisible d-none d-md-inline">hide</span><span class="fancy purple-3 d-none d-md-inline">your
+                <a href="{% url 'home' %}" class="navbar-brand py-0 m-0"><span class="brand pe-2 off-white">SHOW<span
+                            class="brand brand-dark">CASE </span></span><span class="fancy purple-3 d-none d-md-inline ps-4">your
                         creativity</span></a>
             </div>
             <ul class="navbar-nav py-0 dark justify-content-end">
@@ -85,15 +84,17 @@
             </ul>
         </div>
     </nav>
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0 my-5 pt-2 pb-3">
         {% block content %}
         {% endblock content %}
     </main>
-    <footer class="footer footer-bg mt-auto container-fluid d-flex">
-        <a class="footer-left git-link d-inline-flex align-self-center justify-content-end my-2 purple-3" href="https://github.com/mwarddev" aria-label="link to mwarddev's GitHub repositories" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <footer class="footer footer-bg container-fluid d-flex fixed-bottom">
+        <div class="footer-left d-inline-flex justify-content-end">
+        <a class="git-link align-self-center purple-3" href="https://github.com/mwarddev" aria-label="link to mwarddev's GitHub repositories" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
         <div class="footer-right align-items-center d-inline-flex">
-        <a class="off-white my-2 pt-1 in-link" href="https://www.linkedin.com/in/martin-ward-686b40191?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHa%2B1LF%2BZSh2E3LQKzBpCRg%3D%3D" aria-lable="link to developer's linked in page" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-        <p class="off-white mx-auto my-2 copywrite"><span>&copy;</span> {% now 'Y' %} Showcase</p>
+        <a class="off-white pt-1 in-link" href="https://www.linkedin.com/in/martin-ward-686b40191?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BHa%2B1LF%2BZSh2E3LQKzBpCRg%3D%3D" aria-lable="link to developer's linked in page" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        <p class="off-white mx-auto mb-0 copywrite"><span>&copy;</span> {% now 'Y' %} Showcase</p>
         </div>
     </footer>
 </body>

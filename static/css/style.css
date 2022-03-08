@@ -28,15 +28,19 @@ body {
 /* Navigation */
 
 .nav-bg {
-    background: linear-gradient(to right, #532b88 0% 50.5%, #f4effa 50.5% 100%);
+    background: linear-gradient(to right, #532b88 0% 50%, #f4effa 50% 100%);
     font-family: 'Oswald', sans-serif;
     letter-spacing: 2px;
 }
 
 .brand {
     font-size: 1.6rem;
-    letter-spacing: 4px;
+    letter-spacing: 2px;
 }
+
+/* .show {
+    padding-right: 10px;
+} */
 
 .fancy {
     font-family: 'Dancing Script', cursive;
@@ -84,10 +88,19 @@ ul .nav-link:hover {
     }
 }
 
+@media screen and (max-width: 360px) {
+    .nav-link {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+}
+
+
+
 /* Footer */
 
 .footer-bg {
-    background: linear-gradient(to right, #f4effa 0% 50.5%, #532b88 50.5% 100%);
+    background: linear-gradient(to right, #f4effa 0% 50%, #532b88 50% 100%);
 }
 
 .footer-left,
@@ -96,7 +109,11 @@ ul .nav-link:hover {
 }
 
 .in-link {
-    margin-left: 12px;
+    padding-left: 12px;
+}
+
+.git-link {
+    padding-right: 12px;
 }
 
 .copywrite {
