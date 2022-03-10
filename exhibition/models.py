@@ -8,14 +8,14 @@ STATUS = (
 )
 
 CATEGORY = (
-    ('Painting', 'Painting'),
-    ('Photography', 'Photography'),
-    ('Music', 'Music'),
-    ('Graphic Design', 'Graphic Design'),
-    ('Fashion', 'Fashion'),
-    ('Sculpture', 'Sculpture'),
-    ('Architecture', 'Architecture'),
-    ('Fine Art', 'Fine Art')
+    ('painting', 'Painting'),
+    ('photography', 'Photography'),
+    ('music', 'Music'),
+    ('graphic-design', 'Graphic Design'),
+    ('fashion', 'Fashion'),
+    ('sculpture', 'Sculpture'),
+    ('architecture', 'Architecture'),
+    ('fine-art', 'Fine Art')
 )
 
 
