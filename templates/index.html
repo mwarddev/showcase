@@ -10,17 +10,17 @@
                     <h4>Showcase your creativity</h4>
                 </div>
             </div>
-            <div class="card bg-purple-1 order-2 shadow">
+            <div class="card bg-purple-1 shadow">
                 <div class="card-body text-center">
-                    <h3 class="card-title index-title purple-3">Artform</h3>
+                    <h3 class="card-title oswald-title purple-3">Artform</h3>
                     <div class="row">
                         {% for key, value in category %}
                         <div class="col-6 col-md-3">
                             <div class="card shadow bg-purple-2 text-center mb-4">
                                 <a href="posts/{{ value }}">
                                     <div class="card-body p-0">
-                                        <img class="img-fluid .img-thumbnail rounded-top card-image-top"
-                                            src="static/images/{{ key }}.jpg" alt="generic artform image">
+                                        <img class="img-fluid rounded-top card-image-top"
+                                            src="/static/images/{{ key }}.jpg" alt="generic artform image">
                                         <h4 class="card-title artform-btn btn off-white bg-purple-3 m-0 col-12"
                                             role="button">{{ value }}</h4>
                                     </div>
