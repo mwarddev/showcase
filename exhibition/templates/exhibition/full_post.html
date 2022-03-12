@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% for info in post %}
+<div class="container-fluid post-top">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow bg-purple-1">
+                <div class="card-body">
+                    <h2 class="card-title oswald-title purple-3 text-center">{{ info.title }}</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-md-6">
+                            <div class="card shadow bg-purple-2 mb-4">
+                                <div class="card-body">
+                                    {% if "placeholder" in info.media.url %}
+                                    <img class="img-fluid" src="{% static 'images/palette-bg.jpg' %}" alt="colour palette">
+                                    {% else %}
+                                    <img class="img-fluid" src="{{ info.media.url }}" alt="posted media">
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 my-auto">
+                            <div class="card shadow bg-purple-2 mb-4">
+                                <div class="card-body">
+                                    <div class="container-fluid d-inline-flex p-0">
+                                    <span class="purple-4 muted">{{ info.created_date|timesince }} ago </span>
+                                    <span class="purple-4 ms-auto">Report</span>
+                                    </div>
+                                    <p class="purple-4 my-2"><strong>Posted By:</strong> {{ info.user_name }}</p>
+                                    <p class="purple-4 my-2"><strong>Artform:</strong> {{ info.artform }}</p>
+                                    <p class="purple-4 my-2"><strong>Description:</strong> {{ info.description|safe }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="card sahdo bg-purple-2">
+                                <div class="card-body">
+                                    <i class="fa-regular fa-comment purple-3 fs-5"></i>
+                                    <span class="purple-4 d-none d-sm-inline">Comment</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content %}
+
+<!-- {{ info.title }}
+{{ info.artform }}
+{% if "placeholder" in info.media.url %}
+    <img src="{% static 'images/painting.jpg' %}" alt="colour palette">
+{% else %}
+    <img src="{{ info.media.url }}" alt="posted media">
+{% endif %}
+
+{{ info.description|safe }}
+<p>Created by: {{ info.user_name }} on {{ info.created_date }}</p> -->

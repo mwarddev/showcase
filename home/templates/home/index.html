@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <div class="container-fluid mt-5 mb-4">
@@ -17,10 +17,10 @@
                         {% for key, value in category %}
                         <div class="col-6 col-md-3">
                             <div class="card shadow bg-purple-2 text-center mb-4">
-                                <a href="posts/{{ value }}">
+                                <a href="{% url 'artform' value %}">
                                     <div class="card-body p-0">
                                         <img class="img-fluid rounded-top card-image-top"
-                                            src="/static/images/{{ key }}.jpg" alt="generic artform image">
+                                            src="{% static 'images/' %}{{ key }}.jpg" alt="generic artform image">
                                         <h4 class="card-title artform-btn btn off-white bg-purple-3 m-0 col-12"
                                             role="button">{{ value }}</h4>
                                     </div>
@@ -56,7 +56,5 @@
         </div>
     </div>
 </div>
-
-
 
 {% endblock content %}

@@ -12,7 +12,6 @@ body {
     background-size: cover;
 }
 
-
 /* Colours */
 
 .off-white {
@@ -167,10 +166,6 @@ ul .nav-link:hover {
     background-color: #f4effa;
 }
 
-.card {
-    opacity: 0.9;
-}
-
 /* posts.html */
 
 .post-card {
@@ -179,4 +174,11 @@ ul .nav-link:hover {
 
 .info-size {
     font-size: 0.9rem;
+}
+
+/* full_post.html */
+
+.post-top {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
 }
