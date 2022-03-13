@@ -182,3 +182,17 @@ ul .nav-link:hover {
     margin-top: 4rem;
     margin-bottom: 2rem;
 }
+
+.auth:hover {
+    color: #532b88;
+}
+
+.like-btn,
+.dislike-btn {
+    border: none;
+}
+
+.like-btn:hover,
+.dislike-btn:hover {
+    color: #c8b1e4;
+}

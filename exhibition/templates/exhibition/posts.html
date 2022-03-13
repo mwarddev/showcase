@@ -17,10 +17,10 @@
                         <img src="{{ post.media.url }}" alt="posted media" class="img-fluid rounded-top pb-2">
                         {% endif %}
                         <div class="card-text purple-4 info-size">
-                            <p class="mb-0"><strong>Artform:</strong> {{ post.artform }}</p>
-                            <p class="mb-0"><strong>Description:</strong><span> {{ post.description|safe|truncatechars:50 }}</span></p>                            
-                            <p class="mb-0"><strong>Posted by:</strong> {{ post.user_name }}</p>
-                            <p class="mb-0"><strong>Posted:</strong> {{ post.created_date|timesince }} ago</p>
+                            <p class="mb-0 card-text"><strong>Artform:</strong> {{ post.artform }}</p>
+                            <p class="mb-0 card-text"><strong>Description:</strong><span> {{ post.description | safe | truncatechars:50 }}</span></p>                            
+                            <p class="mb-0 card-text"><strong>Posted by:</strong> {{ post.user_name }}</p>
+                            <p class="mb-0 card-text"><strong>Posted:</strong> {{ post.created_date | timesince }} ago</p>
                         </div>
                     </div>
                 </div>

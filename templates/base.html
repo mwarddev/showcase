@@ -46,7 +46,7 @@
                 {% endif %}
                 {% if user.is_superuser %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}"><i class="fa-solid fa-screwdriver-wrench"></i>
+                    <a class="nav-link" href="{% url 'admin:index' %}" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i>
                         <p class="icon-name d-none d-sm-block">Admin</p>
                     </a>
                 </li>
@@ -66,18 +66,18 @@
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i>
+                    <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i>
                         <p class="icon-name d-none d-sm-block">Logout</p>
                     </a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-list-check"></i>
+                    <a class="nav-link" href="{% url 'account_signup' %}"><i class="fa-solid fa-list-check"></i>
                         <p class="icon-name d-none d-sm-block">Register</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <a class="nav-link" href="{% url 'account_login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         <p class="icon-name d-none d-sm-block">Login</p>
                     </a>
                 </li>

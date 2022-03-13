@@ -14,7 +14,8 @@
                             <div class="card shadow bg-purple-2 mb-4">
                                 <div class="card-body">
                                     {% if "placeholder" in info.media.url %}
-                                    <img class="img-fluid" src="{% static 'images/palette-bg.jpg' %}" alt="colour palette">
+                                    <img class="img-fluid" src="{% static 'images/palette-bg.jpg' %}"
+                                        alt="colour palette">
                                     {% else %}
                                     <img class="img-fluid" src="{{ info.media.url }}" alt="posted media">
                                     {% endif %}
@@ -25,20 +26,51 @@
                             <div class="card shadow bg-purple-2 mb-4">
                                 <div class="card-body">
                                     <div class="container-fluid d-inline-flex p-0">
-                                    <span class="purple-4 muted">{{ info.created_date|timesince }} ago </span>
-                                    <span class="purple-4 ms-auto">Report</span>
+                                        <span
+                                            class="purple-4 purple-4 card-text info-size">{{ info.created_date | timesince }}
+                                            ago </span>
+                                        <span class="purple-4 ms-auto card-text info-size">Report</span>
                                     </div>
-                                    <p class="purple-4 my-2"><strong>Posted By:</strong> {{ info.user_name }}</p>
-                                    <p class="purple-4 my-2"><strong>Artform:</strong> {{ info.artform }}</p>
-                                    <p class="purple-4 my-2"><strong>Description:</strong> {{ info.description|safe }}</p>
+                                    <p class="purple-4 my-2 card-text info-size"><strong>Posted By:</strong>
+                                        {{ info.user_name }}</p>
+                                    <p class="purple-4 my-2 card-text info-size"><strong>Artform:</strong>
+                                        {{ info.artform }}</p>
+                                    <p class="purple-4 my-2 card-text info-size"><strong>Description:</strong>
+                                        {{ info.description | safe }}</p>
+                                    <strong class="info-size purple-4">
+                                        {% if user.is_authenticated %}
+                                        <form action="" class="d-inline auth" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" name="" value="{{ info.id }}" class="like-btn bg-purple-2">
+                                                <i class="fa-solid fa-angle-up"></i>
+                                            </button>
+                                        </form>
+                                        {% else %}
+                                        <span><i class="fa-solid fa-angle-up"></i></span>
+                                        {% endif %}
+                                        <span>0</span>
+                                    </strong>
+                                    <strong class="info-size purple-4">
+                                        {% if user.is_authenticated %}
+                                        <form action="" class="d-inline auth" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" name="" value="{{ info.id }}" class="dislike-btn bg-purple-2">
+                                                <i class="fa-solid fa-angle-down"></i>
+                                            </button>
+                                        </form>
+                                        {% else %}
+                                        <span><i class="fa-solid fa-angle-down"></i></span>
+                                        {% endif %}
+                                        <span>0</span>
+                                    </strong>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-8">
-                            <div class="card sahdo bg-purple-2">
+                            <div class="card shadow bg-purple-2">
                                 <div class="card-body">
                                     <i class="fa-regular fa-comment purple-3 fs-5"></i>
-                                    <span class="purple-4 d-none d-sm-inline">Comment</span>
+                                    <span class="card-text purple-4 d-none d-sm-inline">Comment</span>
                                 </div>
                             </div>
                         </div>
@@ -51,14 +83,3 @@
 {% endfor %}
 
 {% endblock content %}
-
-<!-- {{ info.title }}
-{{ info.artform }}
-{% if "placeholder" in info.media.url %}
-    <img src="{% static 'images/painting.jpg' %}" alt="colour palette">
-{% else %}
-    <img src="{{ info.media.url }}" alt="posted media">
-{% endif %}
-
-{{ info.description|safe }}
-<p>Created by: {{ info.user_name }} on {{ info.created_date }}</p> -->
