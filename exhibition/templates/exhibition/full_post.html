@@ -6,18 +6,18 @@
 <div class="container-fluid post-top">
     <div class="row">
         <div class="col">
-            <div class="card shadow bg-purple-1">
+            <div class="card shadow trans">
                 <div class="card-body">
-                    <h2 class="card-title oswald-title purple-3 text-center">{{ info.title }}</h2>
+                    <h2 class="card-title oswald-title off-white text-center">{{ info.title }}</h2>
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-6">
-                            <div class="card shadow bg-purple-2 mb-4">
-                                <div class="card-body">
+                            <div class="card shadow bg-purple-2 mb-4 border-0">
+                                <div class="card-body p-0">
                                     {% if "placeholder" in info.media.url %}
-                                    <img class="img-fluid" src="{% static 'images/palette-bg.jpg' %}"
+                                    <img class="img-fluid rounded" src="{% static 'images/palette-bg.jpg' %}"
                                         alt="colour palette">
                                     {% else %}
-                                    <img class="img-fluid" src="{{ info.media.url }}" alt="posted media">
+                                    <img class="img-fluid rounded" src="{{ info.media.url }}" alt="posted media">
                                     {% endif %}
                                 </div>
                             </div>

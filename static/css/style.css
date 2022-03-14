@@ -161,9 +161,14 @@ ul .nav-link:hover {
     padding: 4px 6px;
 }
 
+.sign-in-btn:hover,
 .artform-btn:hover {
     color: #532b88;
     background-color: #f4effa;
+}
+
+.trans {
+    background-color: rgba(155, 114, 207, 0.5);
 }
 
 /* posts.html */

@@ -7,20 +7,31 @@
         {% for post in posts %}
         <div class="col-12 col-sm-6 col-md-4">
             <a href="{% url 'full_post' post.artform post.id %}" class="post-card">
-                <div class="card bg-purple-1 my-4 shadow">
+                <div class="card trans my-4 shadow">
                     <div class="card-body">
-                        <h3 class="card-title oswald-title text-center purple-3">{{ post.title }}</h3>
+                        <h3 class="card-title oswald-title text-center off-white">{{ post.title }}</h3>
                         {% if "placeholder" in post.media.url %}
                         <img src="{% static 'images/palette-bg.jpg' %}" alt="placeholder palette"
-                            class="img-fluid card-img-top rounded-top pb-2">
+                            class="img-fluid card-img-top rounded-top pb-3">
                         {% else %}
                         <img src="{{ post.media.url }}" alt="posted media" class="img-fluid rounded-top pb-2">
                         {% endif %}
-                        <div class="card-text purple-4 info-size">
-                            <p class="mb-0 card-text"><strong>Artform:</strong> {{ post.artform }}</p>
-                            <p class="mb-0 card-text"><strong>Description:</strong><span> {{ post.description | safe | truncatechars:50 }}</span></p>                            
-                            <p class="mb-0 card-text"><strong>Posted by:</strong> {{ post.user_name }}</p>
-                            <p class="mb-0 card-text"><strong>Posted:</strong> {{ post.created_date | timesince }} ago</p>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card shadow bg-purple-2">
+                                    <div class="card-body">
+                                        <div class="card-text purple-4 info-size">
+                                            <p class="mb-0"><strong>Artform:</strong> {{ post.artform }}</p>
+                                            <p class="mb-0"><strong>Description:</strong><span>
+                                                    {{ post.description | safe | truncatechars:50 }}</span></p>
+                                            <p class="mb-0"><strong>Posted by:</strong> {{ post.user_name }}</p>
+                                            <p class="mb-0"><strong>Posted:</strong> {{ post.created_date | timesince }}
+                                                ago
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
