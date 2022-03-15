@@ -2,7 +2,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('profile/<str:username>/', views.profile, name='profile'),
     path('', include('exhibition.urls'), name='exhibition-urls'),
-    path('', include('create.urls'), name='create-urls'),
 ]

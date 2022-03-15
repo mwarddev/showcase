@@ -161,7 +161,7 @@ ul .nav-link:hover {
     padding: 4px 6px;
 }
 
-.sign-in-btn:hover,
+.sign-in-out-btn:hover,
 .artform-btn:hover {
     color: #532b88;
     background-color: #f4effa;
