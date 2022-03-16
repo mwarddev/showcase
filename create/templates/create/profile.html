@@ -1,5 +1,99 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
+
+<div class="container-fluid mt-5">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow bg-purple-3 my-4 sticky-top">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="card-title oswald-title off-white text-center">Welcome {{ user.username }}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="card shadow trans">
+                <div class="card-body">
+                    <div class="container-fluid d-inline-flex">
+                        <span>
+                            <h3 class="off-white oswald-title card-title mb-0 pt-2">Your Posts</h3>
+                        </span>
+                        <span class="ms-auto mb-2 text-center">
+                            <a href="#" class="off-white post-link">
+                                <i class="fa-solid fa-circle-plus create pt-1"></i>
+                                <p class="create-title mb-0">Create a post</p>
+                            </a>
+                        </span>
+                    </div>
+                    {% for post in posts %}
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-3 border-0 bg-purple-3">
+                                <div class="row g-0">
+                                    <div class="col-lg-4">
+                                        {% if "placeholder" in post.media.url %}
+                                        <img src="{% static 'images/palette-bg.jpg' %}" alt="placeholder palette"
+                                            class="img-fluid rounded-3">
+                                        {% else %}
+                                        <img src="{{ post.media.url }}" alt="posted media" class="img-fluid rounded-3">
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="card-body off-white">
+                                            <div class="container-fluid d-inline-flex">
+                                                <h3 class="card-title">{{ post.title }}</h3>
+                                                <span class="ps-2 ms-auto">
+                                                    <a href="#" class="post-link off-white">Edit </a>
+                                                    <br>
+                                                    <a href="#" class="post-link off-white"> Delete</a>
+                                                </span>
+                                            </div>
+                                            <p class="card-text">{{ post.created_date | timesince }} ago</p>
+                                            <p class="card-text"><strong>Artform: </strong>{{ post.artform }}</p>
+                                            <p class="card-text mb-0"><strong>Description:
+                                                </strong>{{ post.description | safe | truncatechars:200 }}</p>
+                                            <div class="container-fluid d-inline-flex">
+                                                <strong class="me-2">
+                                                    <span><i class="fa-solid fa-angle-up"></i></span>
+                                                    <span>0</span>
+                                                    <span><i class="fa-solid fa-angle-down"></i></span>
+                                                    <span>0</span>
+                                                </strong>
+                                                <strong class="mx-2">
+                                                    <span><i class="fa-regular fa-comment off-white fs-5"></i></span>
+                                                    <span>0</span>
+                                                </strong>
+                                                <span class="ms-auto">
+                                                    <a href="{% url 'full_post' post.artform post.id %}" class="post-link off-white">View post</a>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <div class="row">
+                        <div class="col">
+                            <div class="card bg-purple-3 off-white">
+                                <div class="card-body">
+                                    <p>You havent created any posts yet :(</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}

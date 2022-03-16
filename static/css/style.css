@@ -80,7 +80,9 @@ body {
 
 .git-link:hover,
 .in-link:hover,
-ul .nav-link:hover {
+ul .nav-link:hover,
+.auth:hover,
+.post-link:hover {
     color: #9b72cf;
 }
 
@@ -173,9 +175,12 @@ ul .nav-link:hover {
 
 /* posts.html */
 
+.post-link,
 .post-card {
     text-decoration: none;
 }
+
+.post-link:hover
 
 .info-size {
     font-size: 0.9rem;
@@ -188,7 +193,7 @@ ul .nav-link:hover {
     margin-bottom: 2rem;
 }
 
-.auth:hover {
+.back:hover {
     color: #532b88;
 }
 
@@ -200,4 +205,15 @@ ul .nav-link:hover {
 .like-btn:hover,
 .dislike-btn:hover {
     color: #c8b1e4;
+}
+
+/* profile.html */
+
+.back,
+.create {
+    font-size: 2rem;
+}
+
+.create-title {
+    font-size: 0.8rem;
 }

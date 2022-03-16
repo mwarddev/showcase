@@ -8,10 +8,15 @@
         <div class="col">
             <div class="card shadow trans">
                 <div class="card-body">
-                    <h2 class="card-title oswald-title off-white text-center">{{ info.title }}</h2>
+                    <span>
+                        <a href="javascript:history.back()">
+                            <i class="fa-solid fa-circle-chevron-left off-white back"></i>
+                        </a>
+                    </span>
+                    <h2 class="card-title oswald-title off-white text-center mb-2">{{ info.title }}</h2>
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-6">
-                            <div class="card shadow bg-purple-2 mb-4 border-0">
+                            <div class="card shadow bg-purple-3 mb-4 border-0">
                                 <div class="card-body p-0">
                                     {% if "placeholder" in info.media.url %}
                                     <img class="img-fluid rounded" src="{% static 'images/palette-bg.jpg' %}"
@@ -23,26 +28,28 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 my-auto">
-                            <div class="card shadow bg-purple-2 mb-4">
-                                <div class="card-body">
+                            <div class="card shadow bg-purple-3 mb-4">
+                                <div class="card-body off-white">
                                     <div class="container-fluid d-inline-flex p-0">
                                         <span
-                                            class="purple-4 purple-4 card-text info-size">{{ info.created_date | timesince }}
+                                            class="card-text info-size">{{ info.created_date | timesince }}
                                             ago </span>
-                                        <span class="purple-4 ms-auto card-text info-size">Report</span>
+                                        <span class="ms-auto card-text info-size">
+                                            <a href="#" class="off-white post-link">Report</a> 
+                                        </span>
                                     </div>
-                                    <p class="purple-4 my-2 card-text info-size"><strong>Posted By:</strong>
+                                    <p class="my-2 card-text info-size"><strong>Posted By:</strong>
                                         {{ info.user_name }}</p>
-                                    <p class="purple-4 my-2 card-text info-size"><strong>Artform:</strong>
+                                    <p class="my-2 card-text info-size"><strong>Artform:</strong>
                                         {{ info.artform }}</p>
-                                    <p class="purple-4 my-2 card-text info-size"><strong>Description:</strong>
+                                    <p class="my-2 card-text info-size"><strong>Description:</strong>
                                         {{ info.description | safe }}</p>
-                                    <strong class="info-size purple-4">
+                                    <strong class="info-size">
                                         {% if user.is_authenticated %}
-                                        <form action="" class="d-inline auth" method="POST">
+                                        <form action="" class="d-inline off-white" method="POST">
                                             {% csrf_token %}
-                                            <button type="submit" name="" value="{{ info.id }}" class="like-btn bg-purple-2">
-                                                <i class="fa-solid fa-angle-up"></i>
+                                            <button type="submit" name="" value="{{ info.id }}" class="like-btn bg-purple-3">
+                                                <i class="fa-solid fa-angle-up off-white auth"></i>
                                             </button>
                                         </form>
                                         {% else %}
@@ -50,16 +57,16 @@
                                         {% endif %}
                                         <span>0</span>
                                     </strong>
-                                    <strong class="info-size purple-4">
+                                    <strong class="info-size">
                                         {% if user.is_authenticated %}
-                                        <form action="" class="d-inline auth" method="POST">
+                                        <form action="" class="d-inline" method="POST">
                                             {% csrf_token %}
-                                            <button type="submit" name="" value="{{ info.id }}" class="dislike-btn bg-purple-2">
-                                                <i class="fa-solid fa-angle-down"></i>
+                                            <button type="submit" name="" value="{{ info.id }}" class="dislike-btn bg-purple-3">
+                                                <i class="fa-solid fa-angle-down off-white auth"></i>
                                             </button>
                                         </form>
                                         {% else %}
-                                        <span><i class="fa-solid fa-angle-down"></i></span>
+                                        <span><i class="fa-solid fa-angle-down off-white"></i></span>
                                         {% endif %}
                                         <span>0</span>
                                     </strong>
@@ -67,10 +74,10 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-8">
-                            <div class="card shadow bg-purple-2">
+                            <div class="card shadow bg-purple-3">
                                 <div class="card-body">
-                                    <i class="fa-regular fa-comment purple-3 fs-5"></i>
-                                    <span class="card-text purple-4 d-none d-sm-inline">Comment</span>
+                                    <i class="fa-regular fa-comment off-white fs-5"></i>
+                                    <span class="card-text off-white d-none d-sm-inline">Comment</span>
                                 </div>
                             </div>
                         </div>
