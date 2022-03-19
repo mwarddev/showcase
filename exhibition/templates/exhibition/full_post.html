@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cloudinary %}
 {% block content %}
 
 {% for info in post %}
@@ -18,11 +19,11 @@
                         <div class="col-12 col-md-6">
                             <div class="card shadow bg-purple-3 mb-4 border-0">
                                 <div class="card-body p-0">
-                                    {% if "placeholder" in info.media.url %}
+                                    {% if "placeholder" in info.image.url %}
                                     <img class="img-fluid rounded" src="{% static 'images/palette-bg.jpg' %}"
                                         alt="colour palette">
                                     {% else %}
-                                    <img class="img-fluid rounded" src="{{ info.media.url }}" alt="posted media">
+                                    <img class="img-fluid rounded" src="{{ info.image.url }}" alt="posted media">
                                     {% endif %}
                                 </div>
                             </div>

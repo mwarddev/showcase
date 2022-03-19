@@ -9,8 +9,7 @@ class PostAdmin(SummernoteModelAdmin):
     Configure admin page for posts
     """
 
-    prepopulated_fields = {'slug': ('title',)}
     list_filter = ('artform', 'created_date')
-    list_display = ('title', 'slug', 'artform', 'created_date')
+    list_display = ('title', 'artform', 'created_date')
     search_fields = ['user_name', 'title', 'description']
     summernote_fields = ('description')

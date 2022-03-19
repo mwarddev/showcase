@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load cloudinary %}
 {% block content %}
 
 <div class="container-fluid mt-5">
@@ -15,11 +16,11 @@
                 <div class="card trans mt-2 mb-1 shadow">
                     <div class="card-body">
                         <h3 class="card-title oswald-title text-center off-white mb-1">{{ post.title }}</h3>
-                        {% if "placeholder" in post.media.url %}
+                        {% if "placeholder" in post.image.url %}
                         <img src="{% static 'images/palette-bg.jpg' %}" alt="placeholder palette"
                             class="img-fluid rounded-3">
                         {% else %}
-                        <img src="{{ post.media.url }}" alt="posted media" class="img-fluid rounded-3">
+                        <img src="{{ post.image.url }}" alt="posted media" class="img-fluid rounded-3">
                         {% endif %}
                         <div class="row">
                             <div class="col">

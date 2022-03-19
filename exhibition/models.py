@@ -5,8 +5,8 @@ from cloudinary.models import CloudinaryField
 
 CATEGORY = (
     ('painting', 'Painting'),
+    ('sketching', 'Sketching'),
     ('photography', 'Photography'),
-    ('music', 'Music'),
     ('graphic-design', 'Graphic Design'),
     ('fashion', 'Fashion'),
     ('sculpture', 'Sculpture'),
@@ -25,12 +25,17 @@ class Post(models.Model):
     artform = models.CharField(max_length=20,
                                choices=CATEGORY,
                                default='Painting')
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+    title = models.CharField(max_length=200, null=False)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
     description = models.TextField()
-    media = CloudinaryField('Media', default='placeholder')
+    image = CloudinaryField('image',
+                            transformation={
+                                'aspect_ratio': '4:3',
+                                'crop': 'fill',
+                                'gravity': 'auto'
+                            },
+                            default='placeholder')
 
     class Meta:
         """
