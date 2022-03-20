@@ -5,7 +5,10 @@ body {
 }
 
 .bg {
-    background: url('/static/images/palette-bg.jpg') no-repeat center center fixed;
+    background: url('/static/images/palette-bg.jpg'), url('https://res.cloudinary.com/mwarddev/image/upload/v1647725829/static/images/palette-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -74,8 +77,6 @@ body {
 
 .nav-link {
     text-align: center;
-    padding-top: 0;
-    padding-bottom: 0;
 }
 
 .git-link:hover,
@@ -112,13 +113,6 @@ ul .nav-link:hover,
 @media screen and (max-width: 768px) {
     .brand-dark {
         color: #532b88;
-    }
-}
-
-@media screen and (max-width: 360px) {
-    .nav-link {
-        padding-left: 4px !important;
-        padding-right: 4px !important;
     }
 }
 
@@ -193,6 +187,7 @@ ul .nav-link:hover,
     margin-bottom: 2rem;
 }
 
+.create-link:hover,
 .back:hover {
     color: #532b88;
 }

@@ -4,10 +4,15 @@
 
 {% block content %}
 
-<div class="container-fluid mt-5">
+<div class="container-fluid my-auto">
+    <div class="container mt-5 py-3">
+        <a href="javascript:history.back()">
+            <i class="fa-solid fa-circle-chevron-left off-white back"></i>
+        </a>
+    </div>
     <div class="row">
         <div class="col">
-            <div class="card shadow bg-purple-3 my-4">
+            <div class="card shadow bg-purple-3">
                 <div class="row">
                     <div class="col">
                         <h2 class="card-title oswald-title off-white text-center">Welcome {{ user.username }}
@@ -19,16 +24,17 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="card shadow trans">
+            <div class="card shadow trans mb-5">
                 <div class="card-body">
                     <div class="container-fluid d-inline-flex">
                         <span>
-                            <h3 class="off-white oswald-title card-title mb-0 pt-2">Your Posts</h3>
+                            <h3 class="off-white oswald-title card-title mb-0 pt-4
+                            ">Your Posts</h3>
                         </span>
-                        <span class="ms-auto mb-2 text-center">
-                            <a href="{% url 'create_post' %}" class="off-white post-link">
+                        <span class="ms-auto mb-0 text-center">
+                            <a href="{% url 'create_post' %}" class="off-white create-link">
                                 <i class="fa-solid fa-circle-plus create pt-1"></i>
-                                <p class="create-title mb-0">Create a post</p>
+                                <p class="create-title mb-0 pb-1">Create a post</p>
                             </a>
                         </span>
                     </div>
@@ -71,7 +77,8 @@
                                                     <span>0</span>
                                                 </strong>
                                                 <span class="ms-auto">
-                                                    <a href="{% url 'full_post' post.artform post.id %}" class="post-link off-white">View post</a>
+                                                    <a href="{% url 'full_post' post.artform post.id %}"
+                                                        class="post-link off-white">View post</a>
                                                 </span>
                                             </div>
                                         </div>

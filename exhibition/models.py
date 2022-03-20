@@ -28,7 +28,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, null=False)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)
-    description = models.TextField()
+    description = models.TextField(null=False)
     image = CloudinaryField('image',
                             transformation={
                                 'aspect_ratio': '4:3',

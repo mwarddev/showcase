@@ -4,16 +4,16 @@
 {% block content %}
 
 <div class="container-fluid mt-5">
-    <span>
+    <div class="container pt-3">
         <a href="javascript:history.back()">
             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
         </a>
-    </span>
-    <div class="row pt-0">
+    </div>
+    <div class="row">
         {% for post in posts %}
         <div class="col-12 col-sm-6 col-md-4">
             <a href="{% url 'full_post' post.artform post.id %}" class="post-card">
-                <div class="card trans mt-2 mb-1 shadow">
+                <div class="card trans mt-2 mb-4 shadow">
                     <div class="card-body">
                         <h3 class="card-title oswald-title text-center off-white mb-1">{{ post.title }}</h3>
                         {% if "placeholder" in post.image.url %}

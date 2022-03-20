@@ -1,4 +1,5 @@
 {% load static %}
+{% load cloudinary %}
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -31,21 +32,21 @@
 
             <ul class="navbar-nav py-0 light">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i
+                    <a class="nav-link active py-0" aria-current="page" href="{% url 'home' %}"><i
                             class="fa-solid fa-house"></i>
                         <p class="icon-name d-none d-sm-block">Home</p>
                     </a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="{% url 'profile' %}" class="nav-link"><i class="fa-solid fa-user"></i>
+                    <a href="{% url 'profile' %}" class="nav-link py-0"><i class="fa-solid fa-user"></i>
                         <p class="icon-name d-none d-sm-block">{{ user.get_username }}</p>
                     </a>
                 </li>
                 {% endif %}
                 {% if user.is_superuser %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'admin:index' %}" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i>
+                    <a class="nav-link py-0 pe-0" href="{% url 'admin:index' %}" target="_blank"><i class="fa-solid fa-screwdriver-wrench"></i>
                         <p class="icon-name d-none d-sm-block">Admin</p>
                     </a>
                 </li>
@@ -53,30 +54,30 @@
             </ul>
             <div class="justify-content-center">
                 <a href="{% url 'home' %}" class="navbar-brand py-0 m-0"><span class="brand ps-1 ps-md-4 pe-3 pe-md-0 off-white">SHOW<span
-                            class="brand brand-dark">CASE </span></span><span
+                            class="brand brand-dark sm-case">CASE </span></span><span
                         class="fancy purple-4 ps-1 d-none d-md-inline">your
                         creativity</span></a>
             </div>
             <ul class="navbar-nav py-0 dark justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i>
+                    <a class="nav-link py-0 ps-0" href="#"><i class="fa-solid fa-magnifying-glass"></i>
                         <p class="icon-name d-none d-sm-block">Search</p>
                     </a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i>
+                    <a class="nav-link py-0" href="{% url 'account_logout' %}"><i class="fa-solid fa-right-from-bracket"></i>
                         <p class="icon-name d-none d-sm-block">Logout</p>
                     </a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_signup' %}"><i class="fa-solid fa-list-check"></i>
+                    <a class="nav-link py-0" href="{% url 'account_signup' %}"><i class="fa-solid fa-list-check"></i>
                         <p class="icon-name d-none d-sm-block">Register</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'account_login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+                    <a class="nav-link py-0" href="{% url 'account_login' %}"><i class="fa-solid fa-arrow-right-to-bracket"></i>
                         <p class="icon-name d-none d-sm-block">Login</p>
                     </a>
                 </li>
