@@ -4,14 +4,14 @@ from cloudinary.models import CloudinaryField
 
 
 CATEGORY = (
-    ('painting', 'Painting'),
-    ('sketching', 'Sketching'),
-    ('photography', 'Photography'),
-    ('graphic-design', 'Graphic Design'),
-    ('fashion', 'Fashion'),
-    ('sculpture', 'Sculpture'),
-    ('architecture', 'Architecture'),
-    ('fine-art', 'Fine Art')
+    ('Painting', 'painting'),
+    ('Photography', 'photography'),
+    ('Sketching', 'sketching'),
+    ('Graphic Design', 'graphic-design'),
+    ('Fashion', 'fashion'),
+    ('Sculpture', 'sculpture'),
+    ('Architecture', 'architecture'),
+    ('Fine Art', 'fine-art')
 )
 
 

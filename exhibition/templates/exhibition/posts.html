@@ -17,8 +17,12 @@
                     <div class="card-body">
                         <h3 class="card-title oswald-title text-center off-white mb-1">{{ post.title }}</h3>
                         {% if "placeholder" in post.image.url %}
-                        <img src="{% static 'images/palette-bg.jpg' %}" alt="placeholder palette"
+                        {% for key, value in category %}
+                        {% if key == post.artform %}
+                        <img src="{% static 'images/' %}{{ value }}.jpg" alt="placeholder image"
                             class="img-fluid rounded-3">
+                        {% endif %}
+                        {% endfor %}
                         {% else %}
                         <img src="{{ post.image.url }}" alt="posted media" class="img-fluid rounded-3">
                         {% endif %}

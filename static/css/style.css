@@ -158,7 +158,8 @@ ul .nav-link:hover,
 }
 
 .sign-in-out-btn:hover,
-.artform-btn:hover {
+.artform-btn:hover,
+.comment-btn:hover {
     color: #532b88;
     background-color: #f4effa;
 }
@@ -200,6 +201,10 @@ ul .nav-link:hover,
 .like-btn:hover,
 .dislike-btn:hover {
     color: #c8b1e4;
+}
+
+.comment-btn {
+    width: 100px;
 }
 
 /* profile.html */

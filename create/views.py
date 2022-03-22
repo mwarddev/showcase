@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from exhibition.models import Post
+from exhibition.models import Post, CATEGORY
 from .forms import NewPostForm
 
 
@@ -11,10 +11,12 @@ def profile(request):
     """
     user = request.user
     posts = Post.objects.filter(user_name=user)
+    category = CATEGORY
     template_name = 'create/profile.html'
     context = {
         'user': user,
         'posts': posts,
+        'category': category,
     }
     return render(request, template_name, context)
 

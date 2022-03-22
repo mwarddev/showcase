@@ -10,8 +10,7 @@ class Comment(models.Model):
 
     post = models.ForeignKey(Post, on_delete=models.CASCADE,
                              related_name='comments')
-    user_name = models.ForeignKey(User, on_delete=models.CASCADE,
-                                  related_name='user_comment')
+    user_name = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField(blank=False)
     created_date = models.DateTimeField(auto_now=True)
 

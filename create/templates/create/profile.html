@@ -12,7 +12,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="card shadow bg-purple-3">
+            <div class="card shadow bg-purple-3 pt-1 mb-2">
                 <div class="row">
                     <div class="col">
                         <h2 class="card-title oswald-title off-white text-center">Welcome {{ user.username }}
@@ -45,8 +45,12 @@
                                 <div class="row g-0">
                                     <div class="col-lg-4">
                                         {% if "placeholder" in post.image.url %}
-                                        <img src="{% static 'images/palette-bg.jpg' %}" alt="placeholder palette"
+                                        {% for key, value in category %}
+                                        {% if key == post.artform %}
+                                        <img src="{% static 'images/' %}{{ value }}.jpg" alt="placeholder palette"
                                             class="img-fluid rounded-3">
+                                        {% endif %}
+                                        {% endfor %}
                                         {% else %}
                                         <img src="{{ post.image.url }}" alt="posted media" class="img-fluid rounded-3">
                                         {% endif %}
