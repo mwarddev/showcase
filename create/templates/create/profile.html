@@ -47,7 +47,7 @@
                                         {% if "placeholder" in post.image.url %}
                                         {% for key, value in category %}
                                         {% if key == post.artform %}
-                                        <img src="{% static 'images/' %}{{ value }}.jpg" alt="placeholder palette"
+                                        <img src="{% static 'images/' %}{{ value }}.jpg" alt="placeholder image"
                                             class="img-fluid rounded-3">
                                         {% endif %}
                                         {% endfor %}
@@ -60,7 +60,7 @@
                                             <div class="container-fluid d-inline-flex">
                                                 <h3 class="card-title">{{ post.title }}</h3>
                                                 <span class="ps-2 ms-auto">
-                                                    <a href="#" class="post-link off-white">Edit </a>
+                                                    <a href="{% url 'update_post' pk=post.pk %}" class="post-link off-white">Edit </a>
                                                     <br>
                                                     <a href="#" class="post-link off-white"> Delete</a>
                                                 </span>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from exhibition.models import Post, CATEGORY
 from .forms import NewPostForm
@@ -43,3 +43,28 @@ def create_post(request):
             form = NewPostForm()
 
     return render(request, 'create/new_post.html', context)
+
+
+@login_required
+def update_post(request, pk):
+    """
+    Edit a post
+    """
+    template_name = 'create/edit_post.html'
+    post = get_object_or_404(Post, pk=pk)
+
+    if request.method == 'POST':
+        form = NewPostForm(request.POST, instance=post)
+
+        if form.is_valid():
+            form.save()
+
+    else:
+        form = NewPostForm(instance=post)
+
+    context = {
+        'backend_form': form,
+        'post': post,
+    }
+
+    return render(request, template_name, context)
