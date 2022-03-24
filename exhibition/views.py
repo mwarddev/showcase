@@ -19,7 +19,7 @@ def get_posts(request, artform):
 
 def get_full_post(request, artform, pk):
     """
-    Full post view
+    Full post view with comment functionality
     """
     queryset = Post.objects.all()
     post = get_object_or_404(queryset, pk=pk)

@@ -68,3 +68,21 @@ def update_post(request, pk):
     }
 
     return render(request, template_name, context)
+
+
+@login_required
+def delete_post(request, pk):
+    """
+    Delete a post
+    """
+    post_delete = get_object_or_404(Post, pk=pk)
+    template_name = 'create/delete_post.html'
+
+    if request.method == 'POST':
+        post_delete.delete()
+        return redirect('profile')
+    context = {
+        'post_delete': post_delete
+    }
+
+    return render(request, template_name, context)

@@ -6,4 +6,7 @@ urlpatterns = [
     path('posts/<str:artform>/<int:pk>/',
          views.get_full_post,
          name='full_post'),
+    # path('posts/<str:artform>/<int:pk>/comment/<int:comment_id>',
+    #      views.edit_comment,
+    #      name='update_comment'),
 ]

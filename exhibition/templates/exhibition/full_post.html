@@ -95,18 +95,18 @@
                                                         <p><strong>{{ comment.user_name }}</strong></p>
                                                         {% if request.user == comment.user_name %}
                                                         <span class="ps-2 ms-auto">
-                                                            <a href="#" class="post-link purple-3">Edit</a>
+                                                            <!-- <a href="#" class="post-link purple-3">Edit</a> -->
                                                             <br>
-                                                            <a href="#" class="post-link purple-3">Delete</a>
+                                                            <small><a href="#" class="post-link purple-3">Delete</a></small>
                                                         </span>
                                                         {% endif %}
                                                     </div>                                                
                                                     {{ comment.body | linebreaks }}
                                                     <div class="container-fluid px-0 d-inline-flex">
-                                                        <p class="mb-0">{{ comment.created_date | timesince }} ago</p>
+                                                        <small><p class="mb-0">{{ comment.created_date | timesince }} ago</p></small>
                                                         {% if request.user.is_authenticated %}
                                                         <span class="ms-auto">
-                                                            <a href="#" class="post-link purple-3">Report</a>
+                                                            <small><a href="#" class="post-link purple-3">Report</a></small>
                                                         </span>
                                                         {% endif %}
                                                     </div>
@@ -117,7 +117,7 @@
                                     {% empty %}
                                     <div class="row">
                                         <div class="col">
-                                            <div class="card purple-3 bg-off-white">
+                                            <div class="card purple-3 bg-off-white mb-2">
                                                 <div class="card-body">
                                                     <p>No comments posted.</p>
                                                 </div>
@@ -126,19 +126,10 @@
                                     </div>
                                     {% endfor %}
                                     {% if user.is_authenticated %}
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="card shadow bg-off-white purple-3">
-                                                <form method="post" >                                                    
-                                                    {{ comment_form | crispy }}
-                                                    {% csrf_token %}
-                                                <div class="container-fluid d-inline-flex justify-content-center m-2">
-                                                    <button type="submit" value="input" role="button" class="btn comment-btn off-white bg-purple-3 oswald-title border-secondary">Comment</button>
-                                                </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% block comment %}
+                                    {% include 'comments/add_comment.html' %}
+
+                                    {% endblock comment %}
                                     {% endif %}
                                 </div>
                             </div>
