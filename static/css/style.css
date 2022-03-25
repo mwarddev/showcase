@@ -5,10 +5,7 @@ body {
 }
 
 .bg {
-    background: url('/static/images/palette-bg.jpg'), url('https://res.cloudinary.com/mwarddev/image/upload/v1647725829/static/images/palette-bg.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background: url('/static/images/palette-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
