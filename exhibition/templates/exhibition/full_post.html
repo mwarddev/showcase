@@ -23,7 +23,7 @@
                                     {% if "placeholder" in post.image.url %}
                                     {% for key, value in static_images %}
                                     {% if key == post.artform %}
-                                    <img src="{{ value }}" alt="placeholder image"
+                                    <img src="{% static value %}" alt="placeholder image"
                                         class="img-fluid rounded-3">
                                     {% endif %}
                                     {% endfor %}

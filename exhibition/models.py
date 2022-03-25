@@ -15,22 +15,14 @@ CATEGORY = (
 )
 
 STATIC_IMAGE = (
-    ('Painting',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725825/static/images/painting.jpg'),
-    ('Photography',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725826/static/images/photography.jpg'),
-    ('Sketching',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725826/static/images/sketching.jpg'),
-    ('Graphic Design',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725827/static/images/graphic-design.jpg'),
-    ('Fashion',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725828/static/images/fashion.jpg'),
-    ('Sculpture',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725829/static/images/sculpture.jpg'),
-    ('Architecture',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725828/static/images/architecture.jpg'),
-    ('Fine Art',
-    'https://res.cloudinary.com/mwarddev/image/upload/v1647725827/static/images/fine-art.jpg')
+    ('Painting', 'images/painting.jpg'),
+    ('Photography', 'images/photography.jpg'),
+    ('Sketching', 'images/sketching.jpg'),
+    ('Graphic Design', 'images/graphic-design.jpg'),
+    ('Fashion', 'images/fashion.jpg'),
+    ('Sculpture', 'images/sculpture.jpg'),
+    ('Architecture', 'images/architecture.jpg'),
+    ('Fine Art', 'images/fine-art.jpg')
 )
 
 
