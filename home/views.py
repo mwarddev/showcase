@@ -1,14 +1,14 @@
 from django.shortcuts import render
-from exhibition.models import STATIC_IMAGE
+from exhibition.models import CATEGORY
 
 
 def home(request):
     """
     Home page view
     """
-    static_images = STATIC_IMAGE
+    category = CATEGORY
     template_name = 'home/index.html'
     context = {
-        'static_images': static_images
+        'category': category
     }
     return render(request, template_name, context)

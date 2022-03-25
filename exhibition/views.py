@@ -50,7 +50,6 @@ def delete_comment(request, artform, pk, comment_id):
     Delete a comment
     """
     post = get_object_or_404(Post, pk=pk)
-    print(post)
     comments = post.comments.all()
     comment_to_delete = comments.filter(pk=comment_id)
     template_name = 'comments/delete_comment.html'

@@ -31,6 +31,9 @@ class PostReport(models.Model):
                                  null=False)
     more_info = models.TextField(max_length=300, blank=True)
 
+    def __str__(self):
+        return f"{self.reported_post}"
+
 
 class CommentReport(models.Model):
     """
@@ -48,3 +51,6 @@ class CommentReport(models.Model):
                                  default=0,
                                  null=False)
     more_info = models.TextField(max_length=300, blank=True)
+
+    def __str__(self):
+        return f"{self.reported_comment}"
