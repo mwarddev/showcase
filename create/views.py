@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from exhibition.models import Post, CATEGORY
+from exhibition.models import Post, STATIC_IMAGE
 from .forms import NewPostForm
 
 
@@ -11,12 +11,12 @@ def profile(request):
     """
     user = request.user
     posts = Post.objects.filter(user_name=user)
-    category = CATEGORY
+    static_images = STATIC_IMAGE
     template_name = 'create/profile.html'
     context = {
         'user': user,
         'posts': posts,
-        'category': category,
+        'static_images': static_images,
     }
     return render(request, template_name, context)
 

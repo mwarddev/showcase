@@ -21,9 +21,9 @@
                             <div class="card shadow bg-purple-3 mb-4 border-0">
                                 <div class="card-body p-0">
                                     {% if "placeholder" in post.image.url %}
-                                    {% for key, value in category %}
+                                    {% for key, value in static_images %}
                                     {% if key == post.artform %}
-                                    <img src="{% static 'images/' %}{{ value }}.jpg" alt="placeholder image"
+                                    <img src="{{ value }}" alt="placeholder image"
                                         class="img-fluid rounded-3">
                                     {% endif %}
                                     {% endfor %}
@@ -97,7 +97,7 @@
                                                         <span class="ps-2 ms-auto">
                                                             <!-- <a href="#" class="post-link purple-3">Edit</a> -->
                                                             <br>
-                                                            <small><a href="#" class="post-link purple-3">Delete</a></small>
+                                                            <small><a href="{% url 'delete_comment' post.artform post.id comment.id %}" class="post-link purple-3">Delete</a></small>
                                                         </span>
                                                         {% endif %}
                                                     </div>                                                

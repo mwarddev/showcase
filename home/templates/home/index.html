@@ -5,7 +5,7 @@
 
 <div class="container-fluid mt-5 mb-4">
     <div class="row">
-        <div class="col-12 col-sm-8 py-3">
+        <div class="col-12 col-sm-10 offset-sm-1 py-3">
             <div class="card shadow d-sm-none mb-4 trans">
                 <div class="card-body fancy text-center off-white">
                     <h3 class="card-title">Showcase your creativity</h3>
@@ -15,13 +15,13 @@
                 <div class="card-body text-center">
                     <h2 class="card-title oswald-title off-white">Artform</h2>
                     <div class="row">
-                        {% for key, value in category %}
+                        {% for key, value in static_images %}
                         <div class="col-6 col-md-3">
                             <div class="card shadow bg-purple-2 text-center mb-4 border-0">
                                 <a href="{% url 'artform' key %}">
                                     <div class="card-body p-0">
                                         <img class="img-fluid rounded-top card-image-top"
-                                            src="{% static 'images/' %}{{ value }}.jpg" alt="generic artform image">
+                                            src="{{ value }}" alt="generic artform image">
                                         <h4 class="card-title artform-btn btn off-white bg-purple-3 m-0 col-12 rounded-bottom"
                                             role="button">{{ key }}</h4>
                                     </div>
@@ -41,7 +41,7 @@
                     <h3 class="card-title">creativity</h3>
                 </div>
             </div>
-            <div class="card shadow trans">
+            <!-- <div class="card shadow trans">
                 <div class="card-body text-center">
                     <h2 class="card-title oswald-title index-title off-white">Top 10</h2>
                     <div class="row">
@@ -53,7 +53,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

@@ -1,18 +1,18 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from comments.forms import CommentForm
-from .models import Post, CATEGORY
+from .models import Post, STATIC_IMAGE
 
 
 def get_posts(request, artform):
     """
     Selected artform list view
     """
-    category = CATEGORY
+    static_images = STATIC_IMAGE
     posts = Post.objects.filter(artform__icontains=artform)
     template_name = 'exhibition/posts.html'
     context = {
             'posts': posts,
-            'category': category,
+            'static_images': static_images,
     }
     return render(request, template_name, context)
 
@@ -21,10 +21,9 @@ def get_full_post(request, artform, pk):
     """
     Full post view with comment functionality
     """
-    queryset = Post.objects.all()
-    post = get_object_or_404(queryset, pk=pk)
+    post = get_object_or_404(Post, pk=pk)
     comments = post.comments.all().order_by('created_date')
-    category = CATEGORY
+    static_images = STATIC_IMAGE
     template_name = 'exhibition/full_post.html'
 
     comment_form = CommentForm(data=request.POST)
@@ -41,6 +40,27 @@ def get_full_post(request, artform, pk):
         'post': post,
         'comments': comments,
         'comment_form': CommentForm(),
-        'category': category,
+        'static_images': static_images,
     }
+    return render(request, template_name, context)
+
+
+def delete_comment(request, artform, pk, comment_id):
+    """
+    Delete a comment
+    """
+    post = get_object_or_404(Post, pk=pk)
+    print(post)
+    comments = post.comments.all()
+    comment_to_delete = comments.filter(pk=comment_id)
+    template_name = 'comments/delete_comment.html'
+
+    if request.method == 'POST':
+        comment_to_delete.delete()
+        return redirect('../')
+
+    context = {
+        'comment_to_delete': comment_to_delete
+    }
+
     return render(request, template_name, context)

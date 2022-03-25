@@ -45,9 +45,9 @@
                                 <div class="row g-0">
                                     <div class="col-lg-4">
                                         {% if "placeholder" in post.image.url %}
-                                        {% for key, value in category %}
+                                        {% for key, value in static_images %}
                                         {% if key == post.artform %}
-                                        <img src="{% static 'images/' %}{{ value }}.jpg" alt="placeholder image"
+                                        <img src="{{ value }}" alt="placeholder image"
                                             class="img-fluid rounded-3">
                                         {% endif %}
                                         {% endfor %}
