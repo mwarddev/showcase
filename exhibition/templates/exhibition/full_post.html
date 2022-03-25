@@ -63,7 +63,7 @@
                                         {% else %}
                                         <span><i class="fa-solid fa-angle-up"></i></span>
                                         {% endif %}
-                                        <span>0</span>
+                                        <span>{{ post.post_likes.count }}</span>
                                     </strong>
                                     <strong class="info-size">
                                         {% if user.is_authenticated %}
@@ -76,7 +76,7 @@
                                         {% else %}
                                         <span><i class="fa-solid fa-angle-down off-white"></i></span>
                                         {% endif %}
-                                        <span>0</span>
+                                        <span>{{ post.post_dislikes.count }}</span>
                                     </strong>
                                 </div>
                             </div>

@@ -54,10 +54,13 @@ def update_post(request, pk):
     post = get_object_or_404(Post, pk=pk)
 
     if request.method == 'POST':
-        form = NewPostForm(request.POST, instance=post)
+        form = NewPostForm(request.POST, request.FILES, instance=post)
 
         if form.is_valid():
-            form.save()
+            edit_post = form.save(commit=False)
+            edit_post.post = post
+            edit_post.save()
+            return redirect('profile')
 
     else:
         form = NewPostForm(instance=post)
