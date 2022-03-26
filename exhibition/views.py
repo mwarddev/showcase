@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 from comments.forms import CommentForm
 from .models import Post, STATIC_IMAGE
 
@@ -33,6 +34,7 @@ def get_full_post(request, artform, pk):
         comment = comment_form.save(commit=False)
         comment.post = post
         comment.save()
+        messages.success(request, 'Your comment was successfully posted!')
     else:
         comment_form = CommentForm()
 
@@ -56,6 +58,7 @@ def delete_comment(request, artform, pk, comment_id):
 
     if request.method == 'POST':
         comment_to_delete.delete()
+        messages.success(request, 'Your comment was successfully deleted.')
         return redirect('../')
 
     context = {

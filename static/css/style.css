@@ -5,9 +5,7 @@ body {
 }
 
 .bg {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+    background: url('../images/palette-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -181,11 +179,6 @@ ul .nav-link:hover,
 }
 
 /* full_post.html */
-
-.post-top {
-    margin-top: 4rem;
-    margin-bottom: 2rem;
-}
 
 .create-link:hover,
 .back:hover {

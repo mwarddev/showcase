@@ -3,9 +3,9 @@
 {% load cloudinary %}
 {% block content %}
 
-<div class="container-fluid mt-5">
-    <div class="container pt-3">
-        <a href="javascript:history.back()">
+<div class="container-fluid mb-3">
+    <div class="container">
+        <a href="../../">
             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
         </a>
     </div>
@@ -13,8 +13,8 @@
         {% for post in posts %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <a href="{% url 'full_post' post.artform post.id %}" class="post-card">
-                <div class="card trans mt-2 mb-4 shadow">
-                    <div class="card-body">
+                <div class="card trans mt-1 mb-4 shadow">
+                    <div class="card-body pt-1">
                         <h3 class="card-title oswald-title text-center off-white mb-1">{{ post.title }}</h3>
                         {% if "placeholder" in post.image.url %}
                         {% for key, value in static_images %}
@@ -46,6 +46,17 @@
                     </div>
                 </div>
             </a>
+        </div>
+        {% empty %}
+        <div class="row">
+            <div class="col-8 offset-2">
+                <div class="card bg-purple-3 off-white pt-3 text-center">
+                    <div class="card-body">
+                        <strong><p>No posts created for this artform yet.</p></strong>
+                        <strong><p>Be the first!</p></strong>
+                    </div>
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>

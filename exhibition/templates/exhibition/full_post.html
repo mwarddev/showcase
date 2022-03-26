@@ -5,13 +5,17 @@
 {% block content %}
 
 
-<div class="container-fluid post-top">
+<div class="container-fluid mb-5">
     <div class="row">
         <div class="col">
             <div class="card shadow trans">
                 <div class="card-body">
                     <span>
-                        <a href="javascript:history.back()">
+                        {% if request.user == post.user_name %}
+                        <a href="../../../profile">
+                        {% else %}
+                        <a href="../"></a>
+                        {% endif %}
                             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
                         </a>
                     </span>
@@ -41,9 +45,11 @@
                                             {{ post.created_date | timesince }} ago 
                                         </span>
                                         {% if request.user.is_authenticated %}
+                                        {% if request.user != post.user_name %}
                                         <span class="ms-auto card-text info-size">
                                             <a href="#" class="off-white post-link">Report</a> 
                                         </span>
+                                        {% endif %}
                                         {% endif %}
                                     </div>
                                     <p class="my-2 card-text info-size"><strong>Posted By:</strong>

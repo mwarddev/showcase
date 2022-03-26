@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from exhibition.models import Post, STATIC_IMAGE
 from .forms import NewPostForm
 
@@ -37,7 +38,7 @@ def create_post(request):
             new_post = form.save(commit=False)
             new_post.post = Post
             new_post.save()
-
+            messages.success(request, 'You have successfully created a post!')
             return redirect('profile')
         else:
             form = NewPostForm()
@@ -60,6 +61,7 @@ def update_post(request, pk):
             edit_post = form.save(commit=False)
             edit_post.post = post
             edit_post.save()
+            messages.success(request, 'Your post was successfully edited!')
             return redirect('profile')
 
     else:
@@ -83,6 +85,7 @@ def delete_post(request, pk):
 
     if request.method == 'POST':
         post_delete.delete()
+        messages.success(request, 'Your post was successfully deleted')
         return redirect('profile')
     context = {
         'post_delete': post_delete
