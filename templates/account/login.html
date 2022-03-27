@@ -16,13 +16,13 @@
             <div class="col">
               <div class="card shadow bg-off-white p-2">
 
-                <p class="purple-3 card-text mb-0">{% blocktrans %}Welcome to Showcase.{% endblocktrans %}</p>
+                <h5 class="purple-3 card-text mb-0 text-center">{% blocktrans %}Welcome to Showcase{% endblocktrans %}</h5>
                 <p class="purple-3 card-text mb-0">{% blocktrans %}If you would like to create, like, and comment on posts, please login.{% endblocktrans %}</p>
                 <p class="purple-3 card-text">{% blocktrans %}Or, if you have not created an account yet, then please
                   <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
 
 
-                <form class="login" method="POST" action="{% url 'account_login' %}">
+                <form class="login text-center" method="POST" action="{% url 'account_login' %}">
                   {% csrf_token %}
                   {{ form.as_p }}
                   {% if redirect_field_value %}

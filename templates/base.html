@@ -62,11 +62,6 @@
                         creativity</span></a>
             </div>
             <ul class="navbar-nav py-0 dark justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link py-0 ps-0" href="#"><i class="fa-solid fa-magnifying-glass"></i>
-                        <p class="icon-name d-none d-sm-block">Search</p>
-                    </a>
-                </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link py-0" href="{% url 'account_logout' %}"><i
