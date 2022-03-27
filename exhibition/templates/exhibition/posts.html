@@ -38,6 +38,10 @@
                                             <p class="mb-0"><strong>Posted:</strong> {{ post.created_date | timesince }}
                                                 ago
                                             </p>
+                                            <strong>
+                                                <span><i class="fa-regular fa-comment off-white fs-5"></i></span>
+                                                <span>{{ post.comments.count }}</span>
+                                            </strong>
                                         </div>
                                     </div>
                                 </div>

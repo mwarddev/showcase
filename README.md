@@ -252,7 +252,15 @@ The delete link takes the user to a confirmation page where they're asked if the
 * User authentication
   * More information to be taken at registration in order to provide more features, such as email contact and a more personalised profile page.
   * Forgotten password form.
-
+* Search button to find posts by keywords, username, artform.
+* Ability to upload multiple pictures per post.
+* Ability to upload videos so artforms such as music can be included.
+* Ability to like and dislike a post.
+  * View likes and dislikes on a post to see popularity.
+  * Top 10 posts list on homepage calculated by subtracting dislikes from likes to give an overall post score.
+* Ability to edit a comment incase of a mistake made when originally posting.
+* Edit personal information in profile page.
+* Direct messaging with other users.
 
 
 

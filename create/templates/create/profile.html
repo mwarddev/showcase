@@ -65,18 +65,21 @@
                                                     <a href="{% url 'delete' pk=post.id %}" class="post-link off-white"> Delete</a>
                                                 </span>
                                             </div>
-                                            <p class="card-text">{{ post.created_date | timesince }} ago</p>
+                                            <p class="card-text"><strong>Created: </strong> {{ post.created_date | timesince }} ago</p> 
+                                            <!-- {% if post.updated_date != post.created_date %}
+                                            <p class="card-text"><strong>Edited: </strong> {{ post.updated_date | timesince }} ago</p>
+                                            {% endif %} -->
                                             <p class="card-text"><strong>Artform: </strong>{{ post.artform }}</p>
                                             <p class="card-text"><strong>Description:
                                                 </strong>{{ post.description | safe | truncatechars:200 }}</p>
                                             <div class="container-fluid d-inline-flex">
-                                                <strong class="me-2">
+                                                <!-- <strong class="me-2">
                                                     <span><i class="fa-solid fa-angle-up"></i></span>
                                                     <span>{{ post.post_likes.count }}</span>
                                                     <span><i class="fa-solid fa-angle-down"></i></span>
                                                     <span>{{ post.post_dislikes.count }}</span>
-                                                </strong>
-                                                <strong class="mx-2">
+                                                </strong> -->
+                                                <strong>
                                                     <span><i class="fa-regular fa-comment off-white fs-5"></i></span>
                                                     <span>{{ post.comments.count }}</span>
                                                 </strong>

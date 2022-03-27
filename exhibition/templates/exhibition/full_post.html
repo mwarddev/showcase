@@ -40,25 +40,28 @@
                         <div class="col-12 col-md-6">
                             <div class="card shadow bg-purple-3 mb-4">
                                 <div class="card-body off-white">
-                                    <div class="container-fluid d-inline-flex p-0">
-                                        <span class="card-text info-size">
+                                        <p class="card-text info-size"><strong>Created: </strong>
                                             {{ post.created_date | timesince }} ago 
-                                        </span>
-                                        {% if request.user.is_authenticated %}
+                                        </p>
+                                        <!-- {% if post.updated_date != post.created_date %}
+                                        <p class="card-text info-size"><strong>Edited: </strong>
+                                            {{ post.updated_date | timesince }} ago 
+                                        </p>
+                                        {% endif %} -->
+                                        <!-- {% if request.user.is_authenticated %}
                                         {% if request.user != post.user_name %}
                                         <span class="ms-auto card-text info-size">
                                             <a href="#" class="off-white post-link">Report</a> 
                                         </span>
                                         {% endif %}
-                                        {% endif %}
-                                    </div>
-                                    <p class="my-2 card-text info-size"><strong>Posted By:</strong>
+                                        {% endif %} -->
+                                    <p class="card-text info-size"><strong>Posted By:</strong>
                                         {{ post.user_name }}</p>
-                                    <p class="my-2 card-text info-size"><strong>Artform:</strong>
+                                    <p class="card-text info-size"><strong>Artform:</strong>
                                         {{ post.artform }}</p>
-                                    <p class="my-2 card-text info-size"><strong>Description:</strong>
+                                    <p class="card-text info-size"><strong>Description:</strong>
                                         {{ post.description | safe }}</p>
-                                    <strong class="info-size">
+                                    <!-- <strong class="info-size">
                                         {% if user.is_authenticated %}
                                         <form action="" class="d-inline off-white" method="POST">
                                             {% csrf_token %}
@@ -83,14 +86,17 @@
                                         <span><i class="fa-solid fa-angle-down off-white"></i></span>
                                         {% endif %}
                                         <span>{{ post.post_dislikes.count }}</span>
-                                    </strong>
+                                    </strong> -->
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-md-8">
                             <div class="card shadow bg-purple-3">
                                 <div class="card-body">
-                                    <i class="fa-regular fa-comment off-white fs-5"></i>
+                                    <strong>
+                                        <span><i class="fa-regular fa-comment off-white fs-5"></i></span>
+                                        <span class="off-white">{{ post.comments.count }}</span>
+                                    </strong>
                                     <span class="card-text off-white">Comments</span>
                                     {% for comment in comments %}
                                     <div class="row">
@@ -102,7 +108,7 @@
                                                         {% if request.user == comment.user_name %}
                                                         <span class="ps-2 ms-auto">
                                                             <!-- <a href="#" class="post-link purple-3">Edit</a> -->
-                                                            <br>
+                                                            <!-- <br> -->
                                                             <small><a href="{% url 'delete_comment' post.artform post.id comment.id %}" class="post-link purple-3">Delete</a></small>
                                                         </span>
                                                         {% endif %}
@@ -110,11 +116,11 @@
                                                     {{ comment.body | linebreaks }}
                                                     <div class="container-fluid px-0 d-inline-flex">
                                                         <small><p class="mb-0">{{ comment.created_date | timesince }} ago</p></small>
-                                                        {% if request.user.is_authenticated %}
+                                                        <!-- {% if request.user.is_authenticated %}
                                                         <span class="ms-auto">
                                                             <small><a href="#" class="post-link purple-3">Report</a></small>
                                                         </span>
-                                                        {% endif %}
+                                                        {% endif %} -->
                                                     </div>
                                                 </div>
                                             </div>
