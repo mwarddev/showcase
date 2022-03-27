@@ -1,3 +1,7 @@
+"""
+To be used in a future feature
+"""
+
 from django.apps import AppConfig
 
 

@@ -4,12 +4,14 @@
 {% block content %}
 
 <div class="container-fluid mb-3">
+    <!-- Back button -->
     <div class="container">
         <a href="../../">
             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
         </a>
     </div>
     <div class="row">
+        <!-- List of posts for selected artform -->
         {% for post in posts %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <a href="{% url 'full_post' post.artform post.id %}" class="post-card">
@@ -51,6 +53,7 @@
                 </div>
             </a>
         </div>
+        <!-- Message displayed if no posts available -->
         {% empty %}
         <div class="row">
             <div class="col-8 offset-2">

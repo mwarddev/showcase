@@ -1,3 +1,7 @@
+"""
+These models are to be used in a future feature
+"""
+
 from django.db import models
 from django.contrib.auth.models import User
 from exhibition.models import Post

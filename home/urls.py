@@ -5,5 +5,4 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('', include('exhibition.urls'), name='exhibition-urls'),
     path('', include('create.urls'), name='create-urls'),
-    # path('', include('comments.urls'), name='comments-urls'),
 ]

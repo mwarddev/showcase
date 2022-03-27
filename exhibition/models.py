@@ -14,6 +14,7 @@ CATEGORY = (
     ('Fine Art', 'fine-art')
 )
 
+# List created to assign default images to posts and catagory cards
 STATIC_IMAGE = (
     ('Painting', 'images/painting.jpg'),
     ('Photography', 'images/photography.jpg'),

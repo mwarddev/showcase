@@ -5,21 +5,17 @@ from pathlib import Path
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
+# Check if env.py is available
 if os.path.isfile('env.py'):
     import env # noqa
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG')
+# If development is not found in env.py, debug = false
 DEBUG = 'DEVELOPMENT' in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
@@ -54,13 +50,17 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
+# Allauth settings
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# Disable email requirement at registration
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_USERNAME_REQUIRED = True
 
+# Boogtstrap message tags
 MESSAGE_TAGS = {
     messages.DEBUG: 'allert-info',
     messages.INFO: 'alert-info',
@@ -83,6 +83,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'showcase.urls'
 
+# Templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -101,24 +102,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'showcase.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
+# Databases
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -141,7 +131,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -155,19 +144,14 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage' # noqa
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-CLOUDINARY_STORAGE = { 'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')}
-
+CLOUDINARY_STORAGE = {'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')}
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

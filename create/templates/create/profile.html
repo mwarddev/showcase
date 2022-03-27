@@ -5,11 +5,13 @@
 {% block content %}
 
 <div class="container-fluid">
+    <!-- Back button -->
     <div class="container pb-1">
         <a href="../">
             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
         </a>
     </div>
+    <!-- Welcome card -->
     <div class="row">
         <div class="col">
             <div class="card shadow bg-purple-3 pt-1 mb-2">
@@ -31,6 +33,7 @@
                             <h3 class="off-white oswald-title card-title mb-0 pt-4
                             ">Your Posts</h3>
                         </span>
+                        <!-- Create post button -->
                         <span class="ms-auto mb-0 text-center">
                             <a href="{% url 'create_post' %}" class="off-white create-link">
                                 <i class="fa-solid fa-circle-plus create pt-1"></i>
@@ -38,6 +41,7 @@
                             </a>
                         </span>
                     </div>
+                    <!-- Post list -->
                     {% for post in posts %}
                     <div class="row">
                         <div class="col">
@@ -59,6 +63,7 @@
                                         <div class="card-body off-white">
                                             <div class="container-fluid d-inline-flex">
                                                 <h3 class="card-title">{{ post.title }}</h3>
+                                                <!-- Edit and delete post links -->
                                                 <span class="ps-2 ms-auto">
                                                     <a href="{% url 'update_post' pk=post.id %}" class="post-link off-white">Edit </a>
                                                     <br>
@@ -66,23 +71,15 @@
                                                 </span>
                                             </div>
                                             <p class="card-text"><strong>Created: </strong> {{ post.created_date | timesince }} ago</p> 
-                                            <!-- {% if post.updated_date != post.created_date %}
-                                            <p class="card-text"><strong>Edited: </strong> {{ post.updated_date | timesince }} ago</p>
-                                            {% endif %} -->
                                             <p class="card-text"><strong>Artform: </strong>{{ post.artform }}</p>
                                             <p class="card-text"><strong>Description:
                                                 </strong>{{ post.description | safe | truncatechars:200 }}</p>
                                             <div class="container-fluid d-inline-flex">
-                                                <!-- <strong class="me-2">
-                                                    <span><i class="fa-solid fa-angle-up"></i></span>
-                                                    <span>{{ post.post_likes.count }}</span>
-                                                    <span><i class="fa-solid fa-angle-down"></i></span>
-                                                    <span>{{ post.post_dislikes.count }}</span>
-                                                </strong> -->
                                                 <strong>
                                                     <span><i class="fa-regular fa-comment off-white fs-5"></i></span>
                                                     <span>{{ post.comments.count }}</span>
                                                 </strong>
+                                                <!-- Link to full post -->
                                                 <span class="ms-auto">
                                                     <a href="{% url 'full_post' post.artform post.id %}"
                                                         class="post-link off-white">View post</a>
@@ -94,6 +91,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Message shown if no posts have been created  -->
                     {% empty %}
                     <div class="row">
                         <div class="col">

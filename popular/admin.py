@@ -1,3 +1,7 @@
+"""
+To be used in a future feature
+"""
+
 from django.contrib import admin
 from .models import PostLike, PostDislike, CommentLike, CommentDislike
 
