@@ -1,9 +1,13 @@
 # SHOWCASE
 Showcase is a platform for artists of all genres to showcase their talent to other artists and the wider public.
 
-Users can upload images or videos along with a description or excerpt of their art and receive feedback from other users in the form of comments and/or likes.
+Users can upload images along with a description or excerpt of their art and receive feedback from other users in the form of comments.
 
-Placeholder for responsive image
+![responsive image](readme-images/responsive.png)
+
+View the live site [here](https://showcase2022.herokuapp.com/).
+
+Please feel free to sign up and **Showcase** your artistic talent.
 
 ## Contents
 
@@ -23,6 +27,10 @@ Placeholder for responsive image
     * [Colour Palette](#colour-palette)
     * [Typography](#typography)
     * [Iconography](#iconography)
+* [Features](#features)
+  * [Existing Features](#existing-features)
+  * [Future Features](#future-features)
+
   
 
 
@@ -153,4 +161,103 @@ For titles and subtitles the Oswald and Dancing Script fonts have been used and 
 The favicon ![favicon](readme-images/showcase-icon.png) was created with a simple paint application.
 
 All other icons were obtained from [Fontawesome](https://fontawesome.com/).
+
+## Features
+
+### Existing Features
+
+#### Navbar
+![Navbar new](readme-images/nav-bar-new.png)
+
+The navbar is dynamic depending on whether a user is logged in or not, the access level of the user and the width of the screen.
+
+Links are depicted as icons with text definition on larger screens and without text on smaller screens. The depicted navbar is rendered if the user is not logged in.
+
+The icon links from left to right are, the home link (redirects to the home page), the center logo (redirects to the home page), register link (redirects to a sign up form), login link (redirects to the login form).
+
+The navbar is fixed in place and is visible on every page.
+
+#### Home Page
+![Home Page](readme-images/home-page.png)
+
+The home page consists of a list of cards depicting different forms of art. Clicking on one of these cards directs the user to a list of posts relating to the artform selected. Unregistered users are able to view this page.
+
+#### Footer
+![Footer](readme-images/footer.png)
+
+The footer simply consists of 2 nav links. One links to the github repo for the site, the other links to the developer's Linkedin page. Both links open in an external window. In the purple section the user can find copyright info.
+
+#### Sign Up Form
+![Sign Up](readme-images/sign-up.png)
+
+The sign up form is provided by [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) which handles all the user authorizations for the site. To register for the site a potential user only needs to provide a username, and a password. Providing an email address is optional but not required.
+
+Once the user is registered and logged in, a profile icon appears on the navbar next to the home icon.
+
+#### Login Form
+![Login](readme-images/login.png)
+
+The login/sign in form is also provided by [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) and requires the user's username and password to access the site. where the user will be able to create, edit and delete posts and create and delete comments.
+
+#### Logged in Home page
+![logged in](readme-images/logged-in.png)
+
+The only differences on the logged in page are the icons on the navbar. The profile icon appears with the user's username underneath. The site administrator has an extra icon wich gives access to site administrator page. The register and login icons are removed and replaced with a logout icon.
+
+#### Artform Post List Page
+![Post List](readme-images/post-list.png)
+
+When an artform is selected on the home page the user is directed to this post list page containing all the posts created of that paricular artform. The post cards are arranged in order of creation and contain a preview image (if, for some reason, the user dosen't provide an image a placeholder image is used instead), the artform type, a snippet of the post's description, the post's creator and how long ago it was posted. Non-registered users can also view this page. Clicking on a card will direct the user to the full post page.The back button takes the user back to the home page.
+
+#### Full Post Page
+![Full Post](readme-images/full-post-1.png)
+
+In the full post page the user can find a larger post image (larger screens) and the full post description. Unregistered users can view this page but not interact with it. If the content of the post is deemed to be unsuitable or offends the user in any way, there is a Report link on the description box which redirects the user to a form to report the post. This feature is not available to the original poster for obvious reasons. It's also not available to unregistered users.
+
+![Full Post Bottom](readme-images/full-post-2.png)
+
+Scrolling down the page the user will find a comment section in which they'll be able to view comments and post their own comment if they wish. the user also has the option to delete their comments and, again, if another comment is deemed to be offensive it can be reported to admin.
+Non-registered users will only be able to view comments with on interaction.
+Clicking the back button at the top of the page will take the user back to the post list page. Or, if the user is the owner of the post, they'll be redirected to their profile page.
+
+#### Profile Page
+![profile](readme-images/profile.png)
+
+Clicking on the user profile icon in the navbar (not available to non-registered users), the user will be taken to their user profile page where they'll be able to take full advantage of the site's CRUD functionality. They'll be able to: 
+* Create a new post by clicking the create a new post icon
+* Read, the user will see a list of their posts in preview form and can see their full post by clicking the View full post link in the post's info box 
+* Update a post by clicking on the edit link of the required post
+* Delete a post by clicking on the delete link of the required post
+
+The post info box also contains a comment counter.
+Clicking the back button takes the user back to the home page.
+
+#### Create a Post
+![Create Post](readme-images/create-post.png)
+
+Clicking on the create a post button in the profile page, the user is directed to the Create a New Post form page. The form was created using [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) and requests the user selects an artform (default is Painting), a title for the post, a description of the artform they have created, and an image (default image is used if one isn't uploaded). The uploaded images are stored on [cloudinary.com](https://cloudinary.com/). Once submitted, the user is redirected back to their profile page. 
+
+#### Edit a Post
+![Edit Post](readme-images/edit-post.png)
+
+The edit link takes the user to and edit form page, which is much the same as the create form page except the form is pre-filled with the post's information. The user is able to change any aspect of the form (even the image), and save the changes by clicking the update button at the bottom of the form. The user will then be redirected to their profile page.
+
+#### Delete a Post
+![Delete Post](readme-images/delete-post.png)
+
+The delete link takes the user to a confirmation page where they're asked if they're sure they want to delete the post. If they click yes, the post is deleted along with all comments relating to the post and the user is redirected back to their profile page. If they click no, they're redirected back to their profile page and the post remains on the site.
+
+### Future Features
+
+* User authentication
+  * More information to be taken at registration in order to provide more features, such as email contact and a more personalised profile page.
+  * Forgotten password form.
+
+
+
+
+
+
+
+
 

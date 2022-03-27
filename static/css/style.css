@@ -109,7 +109,7 @@ ul .nav-link:hover,
     font-size: 1rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .brand-dark {
         color: #532b88;
     }
