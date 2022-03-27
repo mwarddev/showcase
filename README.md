@@ -207,7 +207,7 @@ The only differences on the logged in page are the icons on the navbar. The prof
 #### Artform Post List Page
 ![Post List](readme-images/post-list.png)
 
-When an artform is selected on the home page the user is directed to this post list page containing all the posts created of that paricular artform. The post cards are arranged in order of creation and contain a preview image (if, for some reason, the user dosen't provide an image a placeholder image is used instead), the artform type, a snippet of the post's description, the post's creator and how long ago it was posted. Non-registered users can also view this page. Clicking on a card will direct the user to the full post page.The back button takes the user back to the home page.
+When an artform is selected on the home page the user is directed to this post list page containing all the posts created of that paricular artform. The post cards are arranged in order of creation and contain a preview image (if, for some reason, the user dosen't provide an image a placeholder image is used instead), the artform type, a snippet of the post's description, the post's creator, how long ago it was posted and the comment count. Non-registered users can also view this page. Clicking on a card will direct the user to the full post page.The back button takes the user back to the home page.
 
 #### Full Post Page
 ![Full Post](readme-images/full-post-1.png)
@@ -216,7 +216,7 @@ In the full post page the user can find a larger post image (larger screens) and
 
 ![Full Post Bottom](readme-images/full-post-2.png)
 
-Scrolling down the page the user will find a comment section in which they'll be able to view comments and post their own comment if they wish. the user also has the option to delete their comments and, again, if another comment is deemed to be offensive it can be reported to admin.
+Scrolling down the page the user will find a comment section in which they'll be able to view comments, the number of comments posted, and post their own comment if they wish. the user also has the option to delete their comments and, again, if another comment is deemed to be offensive it can be reported to admin.
 Non-registered users will only be able to view comments with on interaction.
 Clicking the back button at the top of the page will take the user back to the post list page. Or, if the user is the owner of the post, they'll be redirected to their profile page.
 
