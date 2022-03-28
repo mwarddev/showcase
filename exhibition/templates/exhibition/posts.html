@@ -6,7 +6,7 @@
 <div class="container-fluid mb-3">
     <!-- Back button -->
     <div class="container">
-        <a href="/" aria-label="back to home page">
+        <a href="/">
             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
         </a>
     </div>
@@ -14,7 +14,7 @@
         <!-- List of posts for selected artform -->
         {% for post in posts %}
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <a href="{% url 'full_post' post.artform post.id %}" class="post-card" aria-label="link to full post page">
+            <a href="{% url 'full_post' post.artform post.id %}" class="post-card">
                 <div class="card trans mt-1 mb-4 shadow">
                     <div class="card-body pt-1">
                         <h3 class="card-title oswald-title text-center off-white mb-1">{{ post.title }}</h3>
@@ -59,10 +59,11 @@
                 <div class="card bg-purple-3 off-white pt-3 text-center">
                     <div class="card-body">
                         <strong>
-                            <p>No posts created for this artform yet.</p>
+                            No posts created for this artform yet.
                         </strong>
+                        <br>
                         <strong>
-                            <p>Be the first!</p>
+                            Be the first!
                         </strong>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <!-- Back button -->
     <div class="container pb-1">
-        <a href="/" aria-label="back to home page">
+        <a href="/">
             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
         </a>
     </div>
@@ -29,15 +29,13 @@
             <div class="card shadow trans mb-5">
                 <div class="card-body">
                     <div class="container-fluid d-inline-flex">
-                        <span>
-                            <h3 class="off-white oswald-title card-title mb-0 pt-4
+                        <h3 class="off-white oswald-title card-title mb-0 pt-4
                             ">Your Posts</h3>
-                        </span>
                         <!-- Create post button -->
-                        <span class="ms-auto mb-0 text-center">
-                            <a href="{% url 'create_post' %}" class="off-white create-link" aria-label="create a post button">
+                        <span class="ms-auto mb-0 text-center d-block">
+                            <a href="{% url 'create_post' %}" class="off-white create-link">
                                 <i class="fa-solid fa-circle-plus create pt-1"></i>
-                                <p class="create-title mb-0 pb-1">Create a post</p>
+                                <small class="create-title mb-0 pb-1 d-block">Create a post</small>
                             </a>
                         </span>
                     </div>
@@ -65,12 +63,15 @@
                                                 <h3 class="card-title">{{ post.title }}</h3>
                                                 <!-- Edit and delete post links -->
                                                 <span class="ps-2 ms-auto">
-                                                    <a href="{% url 'update_post' pk=post.id %}" class="post-link off-white" aria-label="edit post link">Edit </a>
+                                                    <a href="{% url 'update_post' pk=post.id %}"
+                                                        class="post-link off-white">Edit </a>
                                                     <br>
-                                                    <a href="{% url 'delete' pk=post.id %}" class="post-link off-white" aria-label="delete post link"> Delete</a>
+                                                    <a href="{% url 'delete' pk=post.id %}" class="post-link off-white">
+                                                        Delete</a>
                                                 </span>
                                             </div>
-                                            <p class="card-text"><strong>Created: </strong> {{ post.created_date | timesince }} ago</p> 
+                                            <p class="card-text"><strong>Created: </strong>
+                                                {{ post.created_date | timesince }} ago</p>
                                             <p class="card-text"><strong>Artform: </strong>{{ post.artform }}</p>
                                             <p class="card-text"><strong>Description:
                                                 </strong>{{ post.description | safe | truncatechars:200 }}</p>
@@ -82,7 +83,7 @@
                                                 <!-- Link to full post -->
                                                 <span class="ms-auto">
                                                     <a href="{% url 'full_post' post.artform post.id %}"
-                                                        class="post-link off-white" aria-label="link to full post page">View post</a>
+                                                        class="post-link off-white">View post</a>
                                                 </span>
                                             </div>
                                         </div>

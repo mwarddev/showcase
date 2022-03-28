@@ -12,18 +12,20 @@
                     <!-- Back button takes user back to profile page if they are the op or back to the post list page if not -->
                     <span>
                         {% if request.user == post.user_name %}
-                        <a href="../../../profile" aria-label="back button to profile page">
-                            {% else %}
-                            <a href="../" aria-label="back button to post list page">
-                                {% endif %}
-                                <i class="fa-solid fa-circle-chevron-left off-white back"></i>
-                            </a>
+                        <a href="../../../profile">
+                            <i class="fa-solid fa-circle-chevron-left off-white back"></i>
+                        </a>
+                        {% else %}
+                        <a href="../">
+                            <i class="fa-solid fa-circle-chevron-left off-white back"></i>
+                        </a>
+                        {% endif %}
                     </span>
                     <!-- Post image -->
                     <h2 class="card-title oswald-title off-white text-center pb-3 mb-2">{{ post.title }}</h2>
                     <div class="row justify-content-center">
                         <div class="col-12 col-md-6">
-                            <div class="card mb-4 border-0">
+                            <div class="card mb-4 bg-purple-3 border-0">
                                 <div class="card-body p-0">
                                     {% if "placeholder" in post.image.url %}
                                     {% for key, value in static_images %}
@@ -73,15 +75,14 @@
                                                         <span class="ps-2 ms-auto">
                                                             <small><a
                                                                     href="{% url 'delete_comment' post.artform post.id comment.id %}"
-                                                                    class="post-link purple-3" aria-label="delete comment">Delete</a></small>
+                                                                    class="post-link purple-3">Delete</a></small>
                                                         </span>
                                                         {% endif %}
                                                     </div>
                                                     {{ comment.body | linebreaks }}
                                                     <div class="container-fluid px-0 d-inline-flex">
-                                                        <small>
-                                                            <p class="mb-0">{{ comment.created_date | timesince }} ago
-                                                            </p>
+                                                        <small class="mb-0">
+                                                            {{ comment.created_date | timesince }} ago
                                                         </small>
                                                     </div>
                                                 </div>

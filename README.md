@@ -30,8 +30,14 @@ Please feel free to sign up and **Showcase** your artistic talent.
 * [Features](#features)
   * [Existing Features](#existing-features)
   * [Future Features](#future-features)
-
-  
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+  * [Manual Tests](#manual-tests)
+  * [Validator Testing](#validator-testing)
+  * [Bugs & Fixes](#bugs--fixes)
+* [Deployment](#deployment)
+* [Credits](#credits)
+* [Aknowledgements](#aknowledgements)
 
 
 ## User Experience (UX)
@@ -262,7 +268,30 @@ The delete link takes the user to a confirmation page where they're asked if the
 * Edit personal information in profile page.
 * Direct messaging with other users.
 
+## Technologies Used
+
+Python 3.8,
+HTML,
+CSS,
+JS
+
+### Frameworks, Libraries and programs Used
+
+* Django 4, the main framework of the site
+* Bootstrap 5, the main souce of styling for the site
+* Git, used for version control
+* GitHub, used to store the repository
+* Heroku, used to deploy the site
+* Cloudinary, used to upload site images and static files for the site
+* Django Allauth, used for authorizations and user info validation
+* Django Crispy Forms, used to creat forms on the site
+* Django Summernote, used as the text editor for the main body of text in creating posts
+* PostgeSQL, teh database used to store all user and post information for the site
+
+
 ## Testing
+
+The site has been tested on a variety of devices and platforms by a group of peers.
 
 ### Manual tests
 
@@ -353,6 +382,139 @@ The delete link takes the user to a confirmation page where they're asked if the
 | User redirected back to the home screen when logout form submitted | Yes |
 | Logout success alert message displayed on user logout | Yes |
 
+### Validatior Testing
+
+#### Markup
+HTML docs were run through the W3C Markup validation service with only bootstrap related errors which can be ignored. 
+
+base.html
+![base.html](readme-images/validator/base.png)
+
+[index.html](readme-images/validator/index.png),
+[posts.html](readme-images/validator/posts.png),
+[full-post.html](readme-images/validator/full-post.png),
+[profile.html](readme-images/validator/profile.png),
+[new-post.html](readme-images/validator/new-post.png),
+[edit-post.html](readme-images/validator/edit-post.png),
+[delete-post.html](readme-images/validator/delete-post.png),
+[add-comment.html](readme-images/validator/add-comment.png),
+[delete-comment.html](readme-images/validator/delete-comment.png)
+
+#### CSS
+CSS code was run through the W3C CSS Jigsaw validator with no errors and 3 warnings for vendor extensions.
+
+![style.css](readme-images/validator/css.png)
+![css-warnings](readme-images/validator/css-warnings.png)
+
+#### PEP8
+
+All python files were run through an online PEP8 linter with no errors.
+
+settings.py
+![settings](readme-images/validator/pep8/settings.png)
+
+[home-view](readme-images/validator/pep8/home-view.png),
+[home-urls](readme-images/validator/pep8/home-urls.png),
+[exhibition-views](readme-images/validator/pep8/exhibition-views.png),
+[exhibition-urls](readme-images/validator/pep8/exhibition-urls.png),
+[exhibition-models](readme-images/validator/pep8/exhibition-models.png),
+[exhibition-admin](readme-images/validator/pep8/exhibition-admin.png),
+[create-views](readme-images/validator/pep8/create-views.png),
+[create-urls](readme-images/validator/pep8/create-urls.png),
+[create-forms](readme-images/validator/pep8/create-forms.png),
+[comments-models](readme-images/validator/pep8/comments-models.png),
+[comments-forms](readme-images/validator/pep8/comments-forms.png),
+[comments-admin](readme-images/validator/pep8/comments-admin.png)
+
+#### JavaScript
+
+JavaScript code was run through the Jshint validator with only 1 undefined variable "bootstrap". This can be ignored.
+
+![js](readme-images/validator/js.png)
+
+#### Lighthouse
+
+Lighthouse was run on the main 4 pages and revealed performance loss depending on how many images are rendered on the page. To combat this, all static images have been run through [tinypng.com](https://tinypng.com/) to reduce image sizes.
+
+Home Page
+
+![light-home](readme-images/validator/light-home.png)
+
+Posts Page
+
+![light-posts](readme-images/validator/light-posts.png)
+
+Full Post Page
+
+![light-full](readme-images/validator/light-full.png)
+
+Profile Page
+
+![light-profile](readme-images/validator/light-profile.png)
+
+### Bugs & Fixes
+
+| Bug | Fix |
+| --- | --- |
+| Static images not showing in deployed site. Images were being called from a local file | Images were being called in a for loop pairing the image name with it's category name in the site. A new list was created with the key being the category name to pair with the category name of the first list, and the value being the filepath of the associated image. The background image in the css file however still wasn't working so it had to be changed to an [inline style](readme-images/bugs/inline-bg.png), which, paired with bootstrap commands, doesn't look pretty but it works |
+| User unable to login if they didn't register an email address when signing up [connection-refused](readme-images/bugs/connection-refused.png) | Validator setting entered into settings.py to override the required attribute |
+| Console.log [error](readme-images/bugs/js-error.png) for timeout function on bootstrap alert messages | Function adjusted to iterate over the messages instead of all of them |
+
+## Deployment
+
+After setting up the local environment by installing all require frameworks and libraries, take the following steps:
+
+* Create a requirements.txt by running
+```
+pip3 freeze --local > requirements.txt
+```
+* Create a Procfile containing the following code:
+```
+web: gunicorn showcase.wsgi
+```
+* Sign up to heroku then create a new app
+* Choose a unique app name and set your location
+* Click on the "Resources" tab and search for postgres then select Heroku Postgres
+* Click on the "Deploy" tab and choose to connect with GitHub
+* Once connected with GitHub, choose your project repo from a list or search for your repo and select it.
+* Click on the "Settings" tab then click "Config Vars"
+* Insert your Cloudinary url in the Key, Value boxes, then your database url and your secret key
+* Click on the "Deploy" tab again, then choose the main branch for your GitHub repo
+* Select Enable automatic deploys to deploy the site every time you commit and push your code to your repo
+* Click "Deploy branch" and when the build is finished click on "View site". The site has been deployed
+
+
+## Credits
+
+My main source of information for this project came from the Codeinstitute Django blog walkthrough project.
+
+Other sources of informtion were:
+* My mentor tim_ci
+* Django docs 
+* Bootstrap docs
+* Stackoverflow
+* Snippets from various youtube videos
+
+All static images were taken from the royalty free website [pexels.com](https://www.pexels.com/) and are attributed to the following photographers:
+
+| Image | Photographer |
+| --- | --- |
+| [shallow-focus-photography-of-paintbrush](https://www.pexels.com/photo/shallow-focus-photography-of-paintbrush-102127/) | [Daian Gan](https://www.pexels.com/@daiangan) |
+| [aperture-black-blur-camera](https://www.pexels.com/photo/aperture-black-blur-camera-274973/) | [Pixabay](https://www.pexels.com/@pixabay) |
+| [posters-on-wall](https://www.pexels.com/photo/posters-on-wall-3052727/) | [Jonathan Borba](https://www.pexels.com/@jonathanborba) |
+| [crop-artist-creating-clay-sculpture](https://www.pexels.com/photo/crop-artist-creating-clay-sculpture-6598664/) | [Sunsetoned](https://www.pexels.com/@sunsetoned) |
+| [architectural-photography-of-brown-wooden-stairs](https://www.pexels.com/photo/architectural-photography-of-brown-wooden-stairs-3153679/) | [Akwice](https://www.pexels.com/@akwice) |
+| [a-person-doing-carpentry](https://www.pexels.com/photo/a-person-doing-carpentry-6790088/) | [Tima Miroshnichenko](https://www.pexels.com/@tima-miroshnichenko) |
+| [a-person-holding-white-printer-paper](https://www.pexels.com/photo/a-person-holding-white-printer-paper-7761829/) | [Ron Lach](https://www.pexels.com/@ron-lach) |
+| [crop-person-drawing-female-portrait-with-pencil](https://www.pexels.com/photo/crop-person-drawing-female-portrait-with-pencil-4752046/) | [igovar](https://www.pexels.com/@igovar-3000547)
+
+## Aknowledgements
+
+I would like to give a special thank you to my friends and family for helping to keep me sane whilst working on this project.
+
+My mentor for giving me a push in the right direction.
+
+My daughter, Annabella for choosing the colour scheme.
 
 
 
