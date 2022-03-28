@@ -12,9 +12,9 @@
                     <!-- Back button takes user back to profile page if they are the op or back to the post list page if not -->
                     <span>
                         {% if request.user == post.user_name %}
-                        <a href="../../../profile">
+                        <a href="../../../profile" aria-label="back button to profile page">
                             {% else %}
-                            <a href="../">
+                            <a href="../" aria-label="back button to post list page">
                                 {% endif %}
                                 <i class="fa-solid fa-circle-chevron-left off-white back"></i>
                             </a>
@@ -73,7 +73,7 @@
                                                         <span class="ps-2 ms-auto">
                                                             <small><a
                                                                     href="{% url 'delete_comment' post.artform post.id comment.id %}"
-                                                                    class="post-link purple-3">Delete</a></small>
+                                                                    class="post-link purple-3" aria-label="delete comment">Delete</a></small>
                                                         </span>
                                                         {% endif %}
                                                     </div>

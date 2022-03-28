@@ -20,9 +20,10 @@
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/showcase-icon.png' %}" />
+    <script src="{% static 'js/script.js' %}"></script>
     <title>Showcase</title>
 </head>
-
+<!-- Inline styling for background image necessary to work with Cloudinary -->
 <body class="d-flex flex-column bg h-100 mt-5 pt-5"
     style="background-image: url('{% static "images/palette-bg.jpg" %}');">
 
@@ -33,21 +34,21 @@
 
             <ul class="navbar-nav py-0 light">
                 <li class="nav-item">
-                    <a class="nav-link active py-0" aria-current="page" href="{% url 'home' %}"><i
+                    <a class="nav-link active py-0" aria-current="page" aria-label="home page" href="{% url 'home' %}"><i
                             class="fa-solid fa-house"></i>
                         <p class="icon-name d-none d-sm-block">Home</p>
                     </a>
                 </li>
                 {% if user.is_authenticated %}
                 <li class="nav-item">
-                    <a href="{% url 'profile' %}" class="nav-link py-0"><i class="fa-solid fa-user"></i>
+                    <a href="{% url 'profile' %}" class="nav-link py-0" aria-label="profile page"><i class="fa-solid fa-user"></i>
                         <p class="icon-name d-none d-sm-block">{{ user.get_username }}</p>
                     </a>
                 </li>
                 {% endif %}
                 {% if user.is_superuser %}
                 <li class="nav-item">
-                    <a class="nav-link py-0 pe-0" href="{% url 'admin:index' %}" target="_blank"><i
+                    <a class="nav-link py-0 pe-0" href="{% url 'admin:index' %}" target="_blank" aria-label="admin site"><i
                             class="fa-solid fa-screwdriver-wrench"></i>
                         <p class="icon-name d-none d-sm-block">Admin</p>
                     </a>
@@ -55,7 +56,7 @@
                 {% endif %}
             </ul>
             <div class="justify-content-center">
-                <a href="{% url 'home' %}" class="navbar-brand py-0 m-0"><span
+                <a href="{% url 'home' %}" class="navbar-brand py-0 m-0" aria-label="home page"><span
                         class="brand ps-1 ps-md-4 pe-3 pe-md-0 off-white">SHOW<span
                             class="brand brand-dark sm-case">CASE </span></span><span
                         class="fancy purple-4 ps-1 d-none d-md-inline">your
@@ -65,19 +66,19 @@
                 {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link py-0" href="{% url 'account_logout' %}"><i
-                            class="fa-solid fa-right-from-bracket"></i>
+                            class="fa-solid fa-right-from-bracket" aria-label="logout"></i>
                         <p class="icon-name d-none d-sm-block">Logout</p>
                     </a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link py-0" href="{% url 'account_signup' %}"><i class="fa-solid fa-list-check"></i>
+                    <a class="nav-link py-0" href="{% url 'account_signup' %}" aria-label="sign up"><i class="fa-solid fa-list-check"></i>
                         <p class="icon-name d-none d-sm-block">Register</p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link py-0" href="{% url 'account_login' %}"><i
-                            class="fa-solid fa-arrow-right-to-bracket"></i>
+                            class="fa-solid fa-arrow-right-to-bracket" aria-label="login"></i>
                         <p class="icon-name d-none d-sm-block">Login</p>
                     </a>
                 </li>
@@ -109,6 +110,7 @@
 
     <!-- Footer -->
     <footer class="footer footer-bg container-fluid d-flex fixed-bottom">
+        <!-- GitHub link -->
         <div class="footer-left d-inline-flex justify-content-end">
             <a class="git-link align-self-center purple-3" href="https://github.com/mwarddev"
                 aria-label="link to mwarddev's GitHub repositories" target="_blank"><i

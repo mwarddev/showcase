@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <!-- Back button -->
     <div class="container pb-1">
-        <a href="../">
+        <a href="/" aria-label="back to home page">
             <i class="fa-solid fa-circle-chevron-left off-white back"></i>
         </a>
     </div>
@@ -35,7 +35,7 @@
                         </span>
                         <!-- Create post button -->
                         <span class="ms-auto mb-0 text-center">
-                            <a href="{% url 'create_post' %}" class="off-white create-link">
+                            <a href="{% url 'create_post' %}" class="off-white create-link" aria-label="create a post button">
                                 <i class="fa-solid fa-circle-plus create pt-1"></i>
                                 <p class="create-title mb-0 pb-1">Create a post</p>
                             </a>
@@ -65,9 +65,9 @@
                                                 <h3 class="card-title">{{ post.title }}</h3>
                                                 <!-- Edit and delete post links -->
                                                 <span class="ps-2 ms-auto">
-                                                    <a href="{% url 'update_post' pk=post.id %}" class="post-link off-white">Edit </a>
+                                                    <a href="{% url 'update_post' pk=post.id %}" class="post-link off-white" aria-label="edit post link">Edit </a>
                                                     <br>
-                                                    <a href="{% url 'delete' pk=post.id %}" class="post-link off-white"> Delete</a>
+                                                    <a href="{% url 'delete' pk=post.id %}" class="post-link off-white" aria-label="delete post link"> Delete</a>
                                                 </span>
                                             </div>
                                             <p class="card-text"><strong>Created: </strong> {{ post.created_date | timesince }} ago</p> 
@@ -82,7 +82,7 @@
                                                 <!-- Link to full post -->
                                                 <span class="ms-auto">
                                                     <a href="{% url 'full_post' post.artform post.id %}"
-                                                        class="post-link off-white">View post</a>
+                                                        class="post-link off-white" aria-label="link to full post page">View post</a>
                                                 </span>
                                             </div>
                                         </div>
