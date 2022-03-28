@@ -21,8 +21,7 @@
                         {% if "placeholder" in post.image.url %}
                         {% for key, value in static_images %}
                         {% if key == post.artform %}
-                        <img src="{% static value %}" alt="placeholder image"
-                            class="img-fluid rounded-3">
+                        <img src="{% static value %}" alt="placeholder image" class="img-fluid rounded-3">
                         {% endif %}
                         {% endfor %}
                         {% else %}
@@ -59,8 +58,12 @@
             <div class="col-8 offset-2">
                 <div class="card bg-purple-3 off-white pt-3 text-center">
                     <div class="card-body">
-                        <strong><p>No posts created for this artform yet.</p></strong>
-                        <strong><p>Be the first!</p></strong>
+                        <strong>
+                            <p>No posts created for this artform yet.</p>
+                        </strong>
+                        <strong>
+                            <p>Be the first!</p>
+                        </strong>
                     </div>
                 </div>
             </div>

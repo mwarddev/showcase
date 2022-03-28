@@ -212,11 +212,11 @@ When an artform is selected on the home page the user is directed to this post l
 #### Full Post Page
 ![Full Post](readme-images/full-post-1.png)
 
-In the full post page the user can find a larger post image (larger screens) and the full post description. Unregistered users can view this page but not interact with it. If the content of the post is deemed to be unsuitable or offends the user in any way, there is a Report link on the description box which redirects the user to a form to report the post. This feature is not available to the original poster for obvious reasons. It's also not available to unregistered users.
+In the full post page the user can find a larger post image (larger screens) and the full post description.
 
 ![Full Post Bottom](readme-images/full-post-2.png)
 
-Scrolling down the page the user will find a comment section in which they'll be able to view comments, the number of comments posted, and post their own comment if they wish. the user also has the option to delete their comments and, again, if another comment is deemed to be offensive it can be reported to admin.
+Scrolling down the page the user will find a comment section in which they'll be able to view comments, the number of comments posted, and post their own comment if they wish. the user also has the option to delete their comments.
 Non-registered users will only be able to view comments with on interaction.
 Clicking the back button at the top of the page will take the user back to the post list page. Or, if the user is the owner of the post, they'll be redirected to their profile page.
 
@@ -261,6 +261,99 @@ The delete link takes the user to a confirmation page where they're asked if the
 * Ability to edit a comment incase of a mistake made when originally posting.
 * Edit personal information in profile page.
 * Direct messaging with other users.
+
+## Testing
+
+### Manual tests
+
+#### Home Page
+
+| Test | Result |
+| --- | --- |
+| Home page renders as expected on all screen sizes and mobile/ tablet orientation | Yes |
+| User able to select a category | Yes |
+| Register form renders correctly when clicked | Yes |
+| User able to register for the site | Yes |
+| Required fields work as expected | Yes |
+| Login form renders correctly | Yes |
+| User able to successfully login | Yes |
+| Required fields work as expected | Yes |
+| User receives alert message to confirm successful login | Yes |
+| Alert message automatically dismisses after 5 seconds | Yes |
+| Home, User profile, and logout icons visible in navbar on login | Yes |
+| User able to click footer links which open in a new window | Yes |
+| Admin icon appears in navbar if user is superuser | Yes |
+| Admin icon directs user to the admin page/site in a new window | Yes | 
+
+#### Post List Page
+
+| Test | Results |
+| --- | --- |
+| Page renders as expected on all screen sizes and mobile/ tablet orientation | Yes |
+| Back button renders on page correctly and redirects user back to the home page | Yes |
+| Post list preview cards render on page for selected category | Yes |
+| Post cards display image preview, post info and comment count | Yes |
+| User redirected to full post page when post card is clicked | Yes |
+| Unregistered user redirected to full post page when post card is clicked | Yes |
+
+#### Full Post Page
+
+| Test | Results |
+| --- | --- |
+| Page renders as expected on all screen sizes and mobile/ tablet orientation | Yes |
+| Back button renders on page correctly and redirects user back to the post list page or if user is the post owner, back to the user profile page | Yes |
+| Post image, information and comment section rendered correctly | Yes |
+| Comment count visible and correct at top of comment section | Yes |
+| All comments visible to all users | Yes |
+| Comment form visible to registered users and not unregistered users | Yes |
+| Registered user able to compose a comment and submit the form | Yes |
+| Registered user's comment renders in the comment section and comment count updates | Yes |
+| Delete link visible on registered user's comment and not other user's comments | Yes |
+| Registered user redirected to comment delete confirmation form when delete link clicked | Yes |
+| Registered user redirected to full post page if "No" clicked and comment still visible | yes |
+| Registered user redirected back to full post page if "Yes" clicked and comment not visible and comment counter updated | Yes |
+| Success alert message rendered to page for the above 2 tests | Yes |
+
+#### Profile Page
+
+| Test | Results |
+| --- | --- |
+| Registerd user redirected to their user profile page when profile icon clicked in navbar | Yes |
+| Page renders as expected on all screen sizes and mobile/ tablet orientation | Yes |
+| Back button renders correctly and redirects registered user back to the home page | Yes |
+| Welcome message renders correctly, welcoming the user by their username | Yes |
+| Create a post button redirects the user to the create post form when clicked | Yes |
+| User able to populate the form and upload an image successfully | Yes |
+| On submitting the form the user is redirected back to their profile page | Yes |
+| Clicking the back button on the form page redirects the user back to their preofile page | Yes |
+| Clicking the reset button on the form clears all form data | Yes |
+| On form submission the new post is rendered at the top of the user's post list on the profile page | Yes |
+| A preview card list of the user's posts visible with an image and post information visible for each post | Yes |
+| Post edit link visible on each post preview card and redirects the user to the edit post form | Yes |
+| Back button on the post edit form page redirects back to the user's profile page | Yes |
+| Post edit form pre-populated with post's data | Yes |
+| User able to edit data and resubmit the form | Yes |
+| User redirected back to profile page on submission | Yes |
+| Updated info displaying the the post preview list | Yes |
+| Delete link visible for each post in user's post list | Yes |
+| User redirected to post delete confirmation form when delete link clicked | Yes |
+| User redirected back to profile page if "No" is clicked and post still visible in post list | Yes |
+| User redirected back to profile page if "Yes" clicked and post deleted from the post list | Yes |
+| Delete success alert message visible after form submission | Yes |
+| view post link visible on each post in the user's post list | Yes |
+| View post link redirects the user to the post's full post page | Yes |
+| Full post page contains any post edits made by the user | Yes |
+| On deletion of a post, all related comments are deleted with it | Yes |
+
+#### Logout
+
+| Test | Results |
+| --- | --- |
+| User redirected to the logout confirmation page when logout icon clicked | Yes |
+| User redirected back to the home screen when logout form submitted | Yes |
+| Logout success alert message displayed on user logout | Yes |
+
+
 
 
 
