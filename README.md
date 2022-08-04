@@ -284,9 +284,9 @@ JS
 * Heroku, used to deploy the site
 * Cloudinary, used to upload site images and static files for the site
 * Django Allauth, used for authorizations and user info validation
-* Django Crispy Forms, used to creat forms on the site
+* Django Crispy Forms, used to create forms on the site
 * Django Summernote, used as the text editor for the main body of text in creating posts
-* PostgeSQL, teh database used to store all user and post information for the site
+* PostgeSQL, the database used to store all user and post information for the site
 
 
 ## Testing
