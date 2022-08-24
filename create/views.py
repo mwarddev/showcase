@@ -27,23 +27,26 @@ def create_post(request):
     """
     Create a new post
     """
-    context = dict(backend_form=NewPostForm())
+    try:
+        context = dict(backend_form=NewPostForm())
 
-    if request.method == 'POST':
-        form = NewPostForm(request.POST, request.FILES)
-        form.instance.user_name = request.user
+        if request.method == 'POST':
+            form = NewPostForm(request.POST, request.FILES)
+            form.instance.user_name = request.user
 
-        context['posted'] = form.instance
-        if form.is_valid():
-            new_post = form.save(commit=False)
-            new_post.post = Post
-            new_post.save()
-            messages.success(request, 'You have successfully created a post!')
-            return redirect('profile')
-        else:
-            form = NewPostForm()
+            context['posted'] = form.instance
+            if form.is_valid():
+                new_post = form.save(commit=False)
+                new_post.post = Post
+                new_post.save()
+                messages.success(request, 'You have successfully created a post!')
+                return redirect('profile')
+            else:
+                form = NewPostForm()
 
-    return render(request, 'create/new_post.html', context)
+        return render(request, 'create/new_post.html', context)
+    except Exception as e:
+        messages.error(request, 'Please upload a valid image file.')
 
 
 @login_required
