@@ -7,8 +7,6 @@ Users can upload images along with a description or excerpt of their art and rec
 
 ![responsive image](readme-images/responsive.png)
 
-View the live site [here](https://showcase2022.herokuapp.com/).
-
 Please feel free to sign up and **Showcase** your artistic talent.
 
 ## Contents
