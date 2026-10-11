@@ -1,3 +1,5 @@
+> :information_source: This project is no longer being maintained.
+
 # SHOWCASE
 Showcase is a platform for artists of all genres to showcase their talent to other artists and the wider public.
 
